@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="~/js/site.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.8/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.8/angular-resource.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
+    
+    <script src="~/app/app.module.js"></script>
+    <script src="~/app/transactions/transaction.controller.js"></script>
+
+    <script src="~/app/services/service.module.js"></script>
+    <script src="~/app/services/transaction.service.js"></script>
+
+    <title>Hello Admin</title>
+</head>
+<body ng-app="admin">
+<button class="ui massive green button">massive</button>
+<div ng-controller="transactionController as vm">
+    <table class="ui green table" align="center">
+        <tr>
+            <th>Transaction ID</th>
+            <th>User</th>
+            <th>Hash</th>
+            <th>Address</th>
+            <th>Country</th>
+        </tr>
+        <tr ng-repeat="transaction in vm.transactions">
+            <td>{{transaction.id}}</td>
+            <td>{{transaction.user.username}}</td>
+            <td>{{transaction.hash}}</td>
+            <td>{{transaction.address}}</td>
+            <td>{{transaction.country.countryName}}</td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>

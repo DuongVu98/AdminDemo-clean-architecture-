@@ -1,0 +1,23 @@
+<div ng-controller="userController as vm">
+    <div class="ui container">
+        <h2 class="ui header">Users</h2>
+        <table class="ui inverted blue red table">
+            <tr>
+                <th>ID</th>
+                <th>Username</th>
+                <th>Full name</th>
+                <th>Data of birth</th>
+                <th>Address</th>
+                <th>Province</th>
+            </tr>
+            <tr ng-repeat="user in vm.users">
+                <td>{{user.id}}</td>
+                <td>{{user.username}}</td>
+                <td>{{user.lastName}} {{user.firstName}}</td>
+                <td>{{user.birthDate}}</td>
+                <td>{{user.address}}</td>
+                <td>{{user.province.provinceName}}</td>
+            </tr>
+        </table>
+    </div>
+</div>

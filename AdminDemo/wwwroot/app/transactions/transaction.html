@@ -1,0 +1,23 @@
+<div ng-controller="transactionController as vm">
+    <div class="ui container">
+        <h2 class="ui header">Transactions</h2>
+        <table class="ui inverted green table" align="center">
+            <tr>
+                <th>Transaction ID</th>
+                <th>User</th>
+                <th>Full name</th>
+                <th>Hash</th>
+                <th>Address</th>
+                <th>Country</th>
+            </tr>
+            <tr ng-repeat="transaction in vm.transactions">
+                <td>{{transaction.id}}</td>
+                <td>{{transaction.user.username}}</td>
+                <td>{{transaction.user.lastName}} {{transaction.user.firstName}}</td>
+                <td>{{transaction.hash}}</td>
+                <td>{{transaction.address}}</td>
+                <td>{{transaction.country.countryName}}</td>
+            </tr>
+        </table>
+    </div>
+</div>
