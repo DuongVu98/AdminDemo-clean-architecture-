@@ -17,6 +17,11 @@ namespace AdminDemo.Usecases.RepositoriesImpl
             throw new System.NotImplementedException();
         }
 
+        public List<Country> FindOnePart(int limit)
+        {
+            throw new NotImplementedException();
+        }
+
         public Country FindById(string id)
         {
             Country country = new Country();

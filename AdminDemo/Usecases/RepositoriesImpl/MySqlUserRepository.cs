@@ -56,6 +56,11 @@ namespace AdminDemo.Usecases.RepositoriesImpl
             
         }
 
+        public List<User> FindOnePart(int limit)
+        {
+            throw new NotImplementedException();
+        }
+
         public User FindById(string id)
         {
             User user = new User();

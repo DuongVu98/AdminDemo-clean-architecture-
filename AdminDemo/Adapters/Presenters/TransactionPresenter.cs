@@ -32,5 +32,24 @@ namespace AdminDemo.Adapters.Presenters
 
             return populateTransactions;
         }
+        
+        public List<PopulatedTransaction> FindAllPopulatedTransactionsWithLimit(int limit)
+        {
+            List<PopulatedTransaction> populateTransactions = new List<PopulatedTransaction>();
+
+            List<Transaction> transactions = _usecases.FindAllTransactionsWithLimit(limit);
+            
+            foreach (var transaction in transactions)
+            {
+                User user = _usecases.FindUserById(transaction.UserId);
+                Country country = _usecases.FindCountryById(transaction.CountryId);
+                Province province = _usecases.FindProviceById(user.ProvinceId);
+                
+                PopulatedUser populatedUser = new PopulatedUser(user.Id, user.Username, user.Password, user.FirstName, user.LastName, user.BirthDate, user.Address, province);
+                populateTransactions.Add(new PopulatedTransaction(transaction.Id, populatedUser, transaction.Hash, transaction.Address, country));
+            }
+
+            return populateTransactions;
+        }
     }
 }

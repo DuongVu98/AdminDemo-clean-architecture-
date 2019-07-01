@@ -16,6 +16,11 @@ namespace AdminDemo.Usecases.RepositoriesImpl
             throw new System.NotImplementedException();
         }
 
+        public List<Province> FindOnePart(int limit)
+        {
+            throw new NotImplementedException();
+        }
+
         public Province FindById(string id)
         {
             Province province = new Province();

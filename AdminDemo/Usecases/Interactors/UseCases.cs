@@ -33,11 +33,17 @@ namespace AdminDemo.Usecases.Interactors
         {
             return transactionRepository.FindAll();
         }
+        
+        public List<Transaction> FindAllTransactionsWithLimit(int limit)
+        {
+            return transactionRepository.FindOnePart(limit);
+        }
 
         public Transaction findTransaction(Transaction transaction)
         {
             return transactionRepository.FindById(transaction.Id);
         }
+        
 
         public Country FindCountryById(string id)
         {
