@@ -6,6 +6,6 @@
     .factory("userResource",["$resource", getUserByUrl])
 
     function getUserByUrl($resource){
-        return $resource("https://localhost:44302/api/admin/populated-users")
+        return $resource("https://localhost:44302/api/admin/users/populated-users")
     }
 }())

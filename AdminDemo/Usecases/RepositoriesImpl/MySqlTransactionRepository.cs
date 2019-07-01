@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.Common;
 using AdminDemo.Domains.Entities;
 using AdminDemo.Usecases.DatabaseConfiguration;
@@ -147,6 +148,42 @@ namespace AdminDemo.Usecases.RepositoriesImpl
         public void Delete(Transaction t)
         {
             throw new System.NotImplementedException();
+        }
+
+        public int Count()
+        {
+            int count = 2;
+            
+            try
+            {
+                _connection.Open();
+                
+                MySqlCommand cmd = new MySqlCommand("select count(*) from transactions", _connection);
+                  
+                cmd.CommandType = CommandType.Text;
+ 
+                // The ExecuteScalar method returns the value of the first column on the first row.
+                object countObj =  cmd.ExecuteScalar();
+                
+                if (countObj != null)
+                {
+                    count = Convert.ToInt32(countObj);
+                }
+                
+                Console.WriteLine("Emp Count: " + count);
+                
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+
+            }
+            finally
+            {
+                _connection.Close();
+            }
+
+            return count;
         }
     }
 }

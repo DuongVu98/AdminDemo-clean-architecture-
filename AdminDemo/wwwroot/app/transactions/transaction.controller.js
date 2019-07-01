@@ -5,10 +5,16 @@
     .module("admin")
     .controller("transactionController",["transactionResource", getTransactions])
 
-    function getTransactions(transactionResource){
+    function getTransactions(transactionResource, $http){
         var vm = this
-        transactionResource.query(function(data){
+
+        transactionResource.transactions.query({limit: 1}, data => {
             vm.transactions = data
+        })
+
+        transactionResource.count.query(data => {
+            vm.count = data
+            console.log(data)
         })
     }
 }())

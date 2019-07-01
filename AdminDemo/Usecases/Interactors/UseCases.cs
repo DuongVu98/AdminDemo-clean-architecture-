@@ -43,6 +43,11 @@ namespace AdminDemo.Usecases.Interactors
         {
             return transactionRepository.FindById(transaction.Id);
         }
+
+        public int TransactionCounting()
+        {
+            return transactionRepository.Count();
+        }
         
 
         public Country FindCountryById(string id)

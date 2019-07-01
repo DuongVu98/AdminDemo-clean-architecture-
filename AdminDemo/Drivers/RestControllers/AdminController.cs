@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Net;
+using System.Threading.Tasks;
 using AdminDemo.Adapters.Models;
 using AdminDemo.Adapters.Presenters;
 using AdminDemo.Domains.Entities;
@@ -31,12 +32,14 @@ namespace AdminDemo.Drivers.RestControllers
             return _usecases.FindAllUsers();
         }
 
-        [HttpGet("populated-users")]
+        [HttpGet("users/populated-users")]
         public List<PopulatedUser> FindAllPopulatedUsers()
         {
             return _userPresenter.FindAllPopulatedUsers();
         }
 
+        
+        
         // GET /api/admin/transactions
         [HttpGet("transactions")]
         public List<Transaction> findAllTransactions()
@@ -45,11 +48,30 @@ namespace AdminDemo.Drivers.RestControllers
         }
 
         // GET /api/admin/populated-transactions
-        [HttpGet("populated-transactions")]
+        [HttpGet("transactions/populated-transactions")]
         public List<PopulatedTransaction> FindAllPopulateTransactions()
         {
-//            return _transactionPresenter.FindAllPopulatedTransactions();
-            return _transactionPresenter.FindAllPopulatedTransactionsWithLimit(1);
+            return _transactionPresenter.FindAllPopulatedTransactions();
+            
+        }
+        
+        [HttpGet("transactions/populated-transactions/{limit:int}")]
+        public List<PopulatedTransaction> FindAllPopulateTransactionsWithLimit(int limit)
+        {
+            return _transactionPresenter.FindAllPopulatedTransactionsWithLimit(limit);
+        }
+
+        [HttpGet("transactions/count")]
+        public ActionResult<IEnumerable<Count>> TransactionsCounting()
+        {
+            
+            return new []
+            {
+                new Count
+                {
+                    Thiscount = 3
+                }
+            };
         }
 
     }

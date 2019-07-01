@@ -75,5 +75,10 @@ namespace AdminDemo.Usecases.RepositoriesImpl
         {
             throw new System.NotImplementedException();
         }
+
+        public int Count()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

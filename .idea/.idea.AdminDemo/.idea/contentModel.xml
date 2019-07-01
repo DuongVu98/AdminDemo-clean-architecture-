@@ -7,6 +7,7 @@
       <e p="AdminDemo" t="IncludeRecursive">
         <e p="Adapters" t="Include">
           <e p="Models" t="Include">
+            <e p="Count.cs" t="Include" />
             <e p="PopulatedTransaction.cs" t="Include" />
             <e p="PopulatedUser.cs" t="Include" />
           </e>
