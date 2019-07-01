@@ -19,11 +19,11 @@
                 <td>{{transaction.country.countryName}}</td>
             </tr>
         </table>
-        <table>
-            <tr>
-                <td><a class="ui red circular label">2</a></td>
-                <td><a class="ui orange circular label">2</a></td>
-                <td><a class="ui yellow circular label">2</a></td>
+        <table align="center">
+            <tr id="pages-list">
+                <td><a class="ui circular label" ng-value="1" ng-click="vm.getPage($event)">1</a></td>
+                <td><a class="ui circular label" ng-value="2" ng-click="vm.getPage($event)">2</a></td>
+                <td><a class="ui circular label" ng-value="3" ng-click="vm.getPage($event)">3</a></td>
             </tr>
         </table>
         <a class="ui red label">{{vm.count[0].thiscount}}</a>
