@@ -1,0 +1,11 @@
+tr#pages-list > a{
+    height: 25px;
+    width: 25px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+tr#pages-list > a:visited{
+    background-color: aqua;
+}

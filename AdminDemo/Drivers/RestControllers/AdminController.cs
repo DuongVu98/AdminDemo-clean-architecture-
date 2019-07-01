@@ -64,12 +64,12 @@ namespace AdminDemo.Drivers.RestControllers
         [HttpGet("transactions/count")]
         public ActionResult<IEnumerable<Count>> TransactionsCounting()
         {
-            
+            int count = _usecases.TransactionCounting();
             return new []
             {
                 new Count
                 {
-                    Thiscount = 3
+                    Thiscount = count
                 }
             };
         }

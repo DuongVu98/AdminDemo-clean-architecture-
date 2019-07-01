@@ -106,9 +106,9 @@
               <e p="user.service.js" t="Include" />
             </e>
             <e p="transactions" t="Include">
-              <e p="test.html" t="Include" />
               <e p="transaction.controller.js" t="Include" />
               <e p="transaction.html" t="Include" />
+              <e p="transactions.css" t="Include" />
             </e>
             <e p="Users" t="Include">
               <e p="user.controller.js" t="Include" />
