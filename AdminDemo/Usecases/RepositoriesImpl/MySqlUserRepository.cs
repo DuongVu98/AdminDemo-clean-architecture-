@@ -56,7 +56,7 @@ namespace AdminDemo.Usecases.RepositoriesImpl
             
         }
 
-        public List<User> FindOnePart(int limit)
+        public List<User> FindOnePart(int limit, int amount)
         {
             throw new NotImplementedException();
         }

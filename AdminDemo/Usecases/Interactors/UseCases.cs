@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using AdminDemo.Domains.Entities;
 using AdminDemo.Usecases.Repositories;
@@ -6,17 +7,22 @@ namespace AdminDemo.Usecases.Interactors
 {
     public class UseCases
     {
+        private static readonly NLog.Logger Logger = NLog.LogManager.GetCurrentClassLogger();
+        
         private IRepository<User> userRepository;
         private IRepository<Transaction> transactionRepository;
         private IRepository<Country> countryRepository;
         private IRepository<Province> provinceRepository;
+        private TransactionsQuery query;
 
-        public UseCases(IRepository<User> userRepository, IRepository<Transaction> transactionRepository, IRepository<Country> countryRepository, IRepository<Province> provinceRepository)
+        public UseCases(IRepository<User> userRepository, IRepository<Transaction> transactionRepository, IRepository<Country> countryRepository, IRepository<Province> provinceRepository, TransactionsQuery query)
         {
             this.userRepository = userRepository;
             this.transactionRepository = transactionRepository;
             this.countryRepository = countryRepository;
             this.provinceRepository = provinceRepository;
+            // Configuration of  TransactionsQuery
+            this.query = new TransactionsQuery(4,0);
         }
 
         public List<User> FindAllUsers()
@@ -36,7 +42,7 @@ namespace AdminDemo.Usecases.Interactors
         
         public List<Transaction> FindAllTransactionsWithLimit(int limit)
         {
-            return transactionRepository.FindOnePart(limit);
+            return transactionRepository.FindOnePart(limit, query.TransactionsPerQuery);
         }
 
         public Transaction findTransaction(Transaction transaction)
@@ -44,9 +50,13 @@ namespace AdminDemo.Usecases.Interactors
             return transactionRepository.FindById(transaction.Id);
         }
 
-        public int TransactionCounting()
+        public TransactionsQuery TransactionCounting()
         {
-            return transactionRepository.Count();
+            query.NumberOfAllTransactions = transactionRepository.Count();
+            Logger.Info("Transparent per query ----> {}", query.TransactionsPerQuery);
+//            query.TransactionsPerQuery = 2;
+//            return transactionRepository.Count();
+            return query;
         }
         
 

@@ -17,7 +17,7 @@ namespace AdminDemo.Usecases.RepositoriesImpl
             throw new System.NotImplementedException();
         }
 
-        public List<Country> FindOnePart(int limit)
+        public List<Country> FindOnePart(int limit, int amount)
         {
             throw new NotImplementedException();
         }

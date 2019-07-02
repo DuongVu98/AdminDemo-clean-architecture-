@@ -7,7 +7,6 @@
       <e p="AdminDemo" t="IncludeRecursive">
         <e p="Adapters" t="Include">
           <e p="Models" t="Include">
-            <e p="Count.cs" t="Include" />
             <e p="PopulatedTransaction.cs" t="Include" />
             <e p="PopulatedUser.cs" t="Include" />
           </e>
@@ -71,6 +70,7 @@
             <e p="DatabaseConnectionConfiguration.cs" t="Include" />
           </e>
           <e p="Interactors" t="Include">
+            <e p="TransactionsQuery.cs" t="Include" />
             <e p="UseCases.cs" t="Include" />
           </e>
           <e p="Repositories" t="Include">
@@ -106,6 +106,7 @@
               <e p="user.service.js" t="Include" />
             </e>
             <e p="transactions" t="Include">
+              <e p="pagenumber.html" t="Include" />
               <e p="transaction.controller.js" t="Include" />
               <e p="transaction.html" t="Include" />
               <e p="transactions.css" t="Include" />

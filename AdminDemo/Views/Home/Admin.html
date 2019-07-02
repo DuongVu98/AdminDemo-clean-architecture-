@@ -1,42 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <script src="~/js/site.js"></script>
 
+<html>
+<head>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.8/angular.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.8/angular-resource.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.8/angular-route.min.js"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"/>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
+
     
-    <script src="~/app/app.module.js"></script>
-    <script src="~/app/transactions/transaction.controller.js"></script>
+    <script src="/app/app.module.js"></script>
+    <script src="/app/transactions/transaction.controller.js"></script>
+    <script src="/app/users/user.controller.js"></script>
 
-    <script src="~/app/services/service.module.js"></script>
-    <script src="~/app/services/transaction.service.js"></script>
+    <script src="/app/services/service.module.js"></script>
+    <script src="/app/services/transaction.service.js"></script>
+    <script src="/app/services/user.service.js"></script>
 
+    <script src="/app/routes/app.route.js"></script>
+
+    <link rel="stylesheet" href="/css/transaction.css"/>
     <title>Hello Admin</title>
 </head>
-<body ng-app="admin">
-<button class="ui massive green button">massive</button>
-<div ng-controller="transactionController as vm">
-    <table class="ui green table" align="center">
-        <tr>
-            <th>Transaction ID</th>
-            <th>User</th>
-            <th>Hash</th>
-            <th>Address</th>
-            <th>Country</th>
-        </tr>
-        <tr ng-repeat="transaction in vm.transactions">
-            <td>{{transaction.id}}</td>
-            <td>{{transaction.user.username}}</td>
-            <td>{{transaction.hash}}</td>
-            <td>{{transaction.address}}</td>
-            <td>{{transaction.country.countryName}}</td>
-        </tr>
-    </table>
+<body>
+
+
+<div ng-app="admin">
+    <div class="ui inverted segment">
+        <div class="ui inverted secondary menu">
+            <a href="#" class="active item">Home</a>
+            <a href="#!users" class="item">Users</a>
+            <a href="#!transactions" class="item">Transactions</a>
+        </div>
+    </div>
+    <br/><br/>
+    <div ng-view></div>
 </div>
 </body>
 </html>

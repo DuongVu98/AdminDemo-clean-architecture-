@@ -37,7 +37,12 @@ namespace AdminDemo
                 options.CheckConsentNeeded = context => true;
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
-            
+
+            services.Configure<TransactionsQuery>(query =>
+            {
+                query.TransactionsPerQuery = 2;
+                query.NumberOfAllTransactions = 0;
+            });
             services.AddCors(options =>
             {
                 options.AddPolicy("CorsPolicy",
@@ -57,6 +62,8 @@ namespace AdminDemo
             services.AddScoped<UseCases, UseCases>();
             services.AddScoped<TransactionPresenter, TransactionPresenter>();
             services.AddScoped<UserPresenter, UserPresenter>();
+            
+            services.AddScoped<TransactionsQuery, TransactionsQuery>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

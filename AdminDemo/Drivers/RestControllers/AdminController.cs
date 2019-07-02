@@ -62,15 +62,21 @@ namespace AdminDemo.Drivers.RestControllers
         }
 
         [HttpGet("transactions/count")]
-        public ActionResult<IEnumerable<Count>> TransactionsCounting()
+        public ActionResult<IEnumerable<TransactionsQuery>> TransactionsCounting()
         {
-            int count = _usecases.TransactionCounting();
+            TransactionsQuery query = _usecases.TransactionCounting();
             return new []
             {
-                new Count
-                {
-                    Thiscount = count
-                }
+//                new Count
+//                {
+//                    Thiscount = count
+//                }
+//                new TransactionsQuery
+//                {
+//                    TransactionsPerQuery = query.TransactionsPerQuery,
+//                    NumberOfAllTransactions = query.NumberOfAllTransactions
+//                }
+                query
             };
         }
 

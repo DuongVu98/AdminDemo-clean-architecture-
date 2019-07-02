@@ -4,6 +4,7 @@ using System.Data;
 using System.Data.Common;
 using AdminDemo.Domains.Entities;
 using AdminDemo.Usecases.DatabaseConfiguration;
+using AdminDemo.Usecases.Interactors;
 using AdminDemo.Usecases.Repositories;
 using MySql.Data.MySqlClient;
 
@@ -12,7 +13,6 @@ namespace AdminDemo.Usecases.RepositoriesImpl
     public class MySqlTransactionRepository : IRepository<Transaction>
     {
         private MySqlConnection _connection = DatabaseConnectionConfiguration.GetDatabaseConnection();
-
         public List<Transaction> FindAll()
         {
             List<Transaction> transactions = new List<Transaction>();
@@ -53,7 +53,7 @@ namespace AdminDemo.Usecases.RepositoriesImpl
             return transactions;
         }
 
-        public List<Transaction> FindOnePart(int limit)
+        public List<Transaction> FindOnePart(int limit, int amount)
         {
             List<Transaction> transactions = new List<Transaction>();
             
@@ -61,10 +61,11 @@ namespace AdminDemo.Usecases.RepositoriesImpl
             {
                 _connection.Open();
                 
-                string sql = "select * from transactions limit @limit, 2";
+                string sql = "select * from transactions limit @limit, @amount";
             
                 MySqlCommand command = new MySqlCommand(sql, _connection);
                 command.Parameters.Add(new MySqlParameter("@limit", MySqlDbType.Int32)).Value = limit;
+                command.Parameters.Add(new MySqlParameter("@amount", MySqlDbType.Int32)).Value = amount;
                 
                 DbDataReader reader = command.ExecuteReader();
 

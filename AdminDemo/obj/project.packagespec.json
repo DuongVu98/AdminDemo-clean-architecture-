@@ -64,6 +64,10 @@
         "MySqlConnector": {
           "target": "Package",
           "version": "[0.57.0-beta1, )"
+        },
+        "NLog": {
+          "target": "Package",
+          "version": "[4.6.5, )"
         }
       },
       "imports": [
