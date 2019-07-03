@@ -10,7 +10,7 @@ using MySql.Data.MySqlClient;
 
 namespace AdminDemo.Usecases.RepositoriesImpl
 {
-    public class MySqlTransactionRepository : IRepository<Transaction>
+    public class MySqlTransactionRepository : IRepository<Transaction>, ISearchingRepository<Transaction>
     {
         private MySqlConnection _connection = DatabaseConnectionConfiguration.GetDatabaseConnection();
         public List<Transaction> FindAll()
@@ -185,6 +185,47 @@ namespace AdminDemo.Usecases.RepositoriesImpl
             }
 
             return count;
+        }
+
+        public List<Transaction> SearchString(string str)
+        {
+            List<Transaction> searchTransactions = new List<Transaction>();
+
+            try
+            {
+                _connection.Open();
+
+                string sql = "select transactions.id, locate('@str', users.user_name) " +
+                             "from transactions inner join countries inner join users " +
+                             "on transactions.countries_id = countries.id and transactions.users_id=users.id " +
+                             "where locate('@str', users.user_name)>0;";
+                
+                MySqlCommand command = new MySqlCommand(sql, _connection);
+                command.Parameters.Add(new MySqlParameter("@str", MySqlDbType.VarChar)).Value = str;
+
+                DbDataReader reader = command.ExecuteReader();
+                
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        string transactionId = reader.GetString(reader.GetOrdinal("transactions.id"));
+                        Transaction transaction = FindById(transactionId);
+                        searchTransactions.Add(transaction);
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error: " + e);
+            }
+            finally
+            {
+                _connection.Close();
+                _connection.Dispose();
+            }
+            
+            return searchTransactions;
         }
     }
 }

@@ -14,13 +14,12 @@ namespace AdminDemo.Adapters.Presenters
             _usecases = usecases;
         }
 
-        public List<PopulatedTransaction> FindAllPopulatedTransactions()
+        public List<PopulatedTransaction> FindAllPopulatedTransactions(List<Transaction> oldList)
         {
             List<PopulatedTransaction> populateTransactions = new List<PopulatedTransaction>();
 
-            List<Transaction> transactions = _usecases.FindAllTransactions();
-            
-            foreach (var transaction in transactions)
+//            List<Transaction> transactions = _usecases.FindAllTransactions();
+            foreach (var transaction in oldList)
             {
                 User user = _usecases.FindUserById(transaction.UserId);
                 Country country = _usecases.FindCountryById(transaction.CountryId);
@@ -51,5 +50,6 @@ namespace AdminDemo.Adapters.Presenters
 
             return populateTransactions;
         }
+        
     }
 }

@@ -77,6 +77,7 @@
             <e p="ICountryRepository.cs" t="Include" />
             <e p="IProvinceRepository.cs" t="Include" />
             <e p="IRepository.cs" t="Include" />
+            <e p="ISearchingRepository.cs" t="Include" />
             <e p="ITransactionRepository.cs" t="Include" />
             <e p="IUserRepository.cs" t="Include" />
           </e>
@@ -106,6 +107,10 @@
               <e p="user.service.js" t="Include" />
             </e>
             <e p="transactions" t="Include">
+              <e p="charts" t="Include">
+                <e p="chart.controller.js" t="Include" />
+                <e p="chart.html" t="Include" />
+              </e>
               <e p="pagenumber.html" t="Include" />
               <e p="transaction.controller.js" t="Include" />
               <e p="transaction.html" t="Include" />

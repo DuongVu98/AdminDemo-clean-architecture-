@@ -51,11 +51,18 @@ namespace AdminDemo.Drivers.RestControllers
         [HttpGet("transactions/populated-transactions")]
         public List<PopulatedTransaction> FindAllPopulateTransactions()
         {
-            return _transactionPresenter.FindAllPopulatedTransactions();
+            return _transactionPresenter.FindAllPopulatedTransactions(_usecases.FindAllTransactions());
             
         }
         
-        [HttpGet("transactions/populated-transactions/{limit:int}")]
+        // POST /api/admin/transactions/search/{str}
+        [HttpPost("transactions/search/{str}")]
+        public List<PopulatedTransaction> TransactionsSearching(string str)
+        {
+            return _transactionPresenter.FindAllPopulatedTransactions(_usecases.TransactionsSearching(str));
+        }
+
+            [HttpGet("transactions/populated-transactions/{limit:int}")]
         public List<PopulatedTransaction> FindAllPopulateTransactionsWithLimit(int limit)
         {
             return _transactionPresenter.FindAllPopulatedTransactionsWithLimit(limit);
@@ -67,15 +74,6 @@ namespace AdminDemo.Drivers.RestControllers
             TransactionsQuery query = _usecases.TransactionCounting();
             return new []
             {
-//                new Count
-//                {
-//                    Thiscount = count
-//                }
-//                new TransactionsQuery
-//                {
-//                    TransactionsPerQuery = query.TransactionsPerQuery,
-//                    NumberOfAllTransactions = query.NumberOfAllTransactions
-//                }
                 query
             };
         }

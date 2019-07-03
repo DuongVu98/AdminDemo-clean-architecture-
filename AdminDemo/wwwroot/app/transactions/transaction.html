@@ -1,8 +1,8 @@
-<link rel="stylesheet" href="app/transactions/transactions.css">
+<!-- <link rel="stylesheet" href="app/transactions/transactions.css"> -->
 <div ng-controller="transactionController as vm">
     <div class="ui container">
         <h2 class="ui header">Transactions</h2>
-        <table class="ui inverted green table" align="center">
+        <table class="ui inverted green table" align="center" style="table-layout: fixed">
             <tr>
                 <th>Transaction ID</th>
                 <th>User</th>
@@ -22,15 +22,13 @@
         </table>
         <table id="thistable" align="center">
             <tr id="pages-list">
-                <!-- <td><a class="ui circular label" ng-value="1" ng-click="vm.getPage($event)">1</a></td>
-                <td><a class="ui circular label" ng-value="2" ng-click="vm.getPage($event)">2</a></td>
-                <td><a class="ui circular label" ng-value="3" ng-click="vm.getPage($event)">3</a></td> -->
-
                 <td ng-repeat="pageNumber in vm.numberOfPages">
                     <div ng-include="'app/transactions/pagenumber.html'"></div>
-                    <!-- {{pageNumber}} -->
                 </td>
             </tr>
         </table>
     </div>
 </div>
+<!-- <div ng-controller="PolarAreaCtrl">
+    <div ng-include="charts/chart.html"></div>
+</div> -->

@@ -19,11 +19,13 @@
         transactionResource.count.query(data => {
             // all of transactions (==4)
             transactionsCount = data[0].numberOfAllTransactions
-            // number of transactions per page (==2)
+            // number of transactions per page
             numberPerPages = data[0].transactionsPerQuery
             vm.numberPerPages = numberPerPages
+
             console.log("inside: "+transactionsCount + " - " + vm.numberPerPages)
 
+            //generate number of pages
             if (numberPerPages != 0) {
                 if (transactionsCount % numberPerPages != 0) {
                     numberOfPages = Math.floor(transactionsCount / numberPerPages) + 1

@@ -7,7 +7,7 @@ namespace AdminDemo.Usecases.Interactors
 {
     public class UseCases
     {
-        private static readonly NLog.Logger Logger = NLog.LogManager.GetCurrentClassLogger();
+//        private static readonly NLog.Logger Logger = NLog.LogManager.GetCurrentClassLogger();
         
         private IRepository<User> userRepository;
         private IRepository<Transaction> transactionRepository;
@@ -15,14 +15,16 @@ namespace AdminDemo.Usecases.Interactors
         private IRepository<Province> provinceRepository;
         private TransactionsQuery query;
 
-        public UseCases(IRepository<User> userRepository, IRepository<Transaction> transactionRepository, IRepository<Country> countryRepository, IRepository<Province> provinceRepository, TransactionsQuery query)
+        public ISearchingRepository<Transaction> transactionsSearch;
+
+        public UseCases(IRepository<User> userRepository, IRepository<Transaction> transactionRepository, IRepository<Country> countryRepository, IRepository<Province> provinceRepository, TransactionsQuery query, ISearchingRepository<Transaction> transactionsSearch)
         {
             this.userRepository = userRepository;
             this.transactionRepository = transactionRepository;
             this.countryRepository = countryRepository;
             this.provinceRepository = provinceRepository;
-            // Configuration of  TransactionsQuery
-            this.query = new TransactionsQuery(4,0);
+            this.query = new TransactionsQuery(5,0);
+            this.transactionsSearch = transactionsSearch;
         }
 
         public List<User> FindAllUsers()
@@ -45,17 +47,14 @@ namespace AdminDemo.Usecases.Interactors
             return transactionRepository.FindOnePart(limit, query.TransactionsPerQuery);
         }
 
-        public Transaction findTransaction(Transaction transaction)
+        public Transaction findTransactionById(string id)
         {
-            return transactionRepository.FindById(transaction.Id);
+            return transactionRepository.FindById(id);
         }
 
         public TransactionsQuery TransactionCounting()
         {
             query.NumberOfAllTransactions = transactionRepository.Count();
-            Logger.Info("Transparent per query ----> {}", query.TransactionsPerQuery);
-//            query.TransactionsPerQuery = 2;
-//            return transactionRepository.Count();
             return query;
         }
         
@@ -68,6 +67,11 @@ namespace AdminDemo.Usecases.Interactors
         public Province FindProviceById(string id)
         {
             return provinceRepository.FindById(id);
+        }
+
+        public List<Transaction> TransactionsSearching(string str)
+        {
+            return transactionsSearch.SearchString(str);
         }
     }
 }
