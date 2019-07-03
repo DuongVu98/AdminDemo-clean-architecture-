@@ -10,7 +10,7 @@ using MySql.Data.MySqlClient;
 
 namespace AdminDemo.Usecases.RepositoriesImpl
 {
-    public class MySqlTransactionRepository : IRepository<Transaction>, ISearchingRepository<Transaction>
+    public class MySqlTransactionRepository : IRepository<Transaction>, ISearchingService<Transaction>, ICountingService<Transaction>
     {
         private MySqlConnection _connection = DatabaseConnectionConfiguration.GetDatabaseConnection();
         public List<Transaction> FindAll()
@@ -187,18 +187,15 @@ namespace AdminDemo.Usecases.RepositoriesImpl
             return count;
         }
 
-        public List<Transaction> SearchString(string str)
+        public List<string> SearchString(string str)
         {
-            List<Transaction> searchTransactions = new List<Transaction>();
+            List<string> searchTransactionsId = new List<string>();
 
             try
             {
                 _connection.Open();
 
-                string sql = "select transactions.id, locate('@str', users.user_name) " +
-                             "from transactions inner join countries inner join users " +
-                             "on transactions.countries_id = countries.id and transactions.users_id=users.id " +
-                             "where locate('@str', users.user_name)>0;";
+                string sql = "select transactions.id, locate(@str, users.user_name) from transactions inner join countries inner join users on transactions.countries_id = countries.id and transactions.users_id = users.id where locate(@str, users.user_name)>0";
                 
                 MySqlCommand command = new MySqlCommand(sql, _connection);
                 command.Parameters.Add(new MySqlParameter("@str", MySqlDbType.VarChar)).Value = str;
@@ -209,10 +206,13 @@ namespace AdminDemo.Usecases.RepositoriesImpl
                 {
                     while (reader.Read())
                     {
-                        string transactionId = reader.GetString(reader.GetOrdinal("transactions.id"));
-                        Transaction transaction = FindById(transactionId);
-                        searchTransactions.Add(transaction);
+                        string transactionId = reader.GetString(reader.GetOrdinal("id"));
+                        searchTransactionsId.Add(transactionId);
                     }
+                }
+                else
+                {
+                    searchTransactionsId.Add("no rows");
                 }
             }
             catch (Exception e)
@@ -222,10 +222,10 @@ namespace AdminDemo.Usecases.RepositoriesImpl
             finally
             {
                 _connection.Close();
-                _connection.Dispose();
+//                _connection.Dispose();
             }
             
-            return searchTransactions;
+            return searchTransactionsId;
         }
     }
 }

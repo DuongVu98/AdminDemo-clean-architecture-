@@ -2,8 +2,8 @@ using System.Collections.Generic;
 
 namespace AdminDemo.Usecases.Repositories
 {
-    public interface ISearchingRepository<T>
+    public interface ISearchingService<T>
     {
-        List<T> SearchString(string str);
+        List<string> SearchString(string str);
     }
 }

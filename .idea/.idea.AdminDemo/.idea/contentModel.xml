@@ -74,10 +74,11 @@
             <e p="UseCases.cs" t="Include" />
           </e>
           <e p="Repositories" t="Include">
+            <e p="ICountingService.cs" t="Include" />
             <e p="ICountryRepository.cs" t="Include" />
             <e p="IProvinceRepository.cs" t="Include" />
             <e p="IRepository.cs" t="Include" />
-            <e p="ISearchingRepository.cs" t="Include" />
+            <e p="ISearchingService.cs" t="Include" />
             <e p="ITransactionRepository.cs" t="Include" />
             <e p="IUserRepository.cs" t="Include" />
           </e>
