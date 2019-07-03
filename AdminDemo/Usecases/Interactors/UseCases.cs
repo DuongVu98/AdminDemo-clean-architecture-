@@ -83,7 +83,7 @@ namespace AdminDemo.Usecases.Interactors
             {
                 if (Equals(id, "no rows"))
                 {
-                    transactions.Add(khoa);
+                    return transactions;
                 }
                 else
                 {

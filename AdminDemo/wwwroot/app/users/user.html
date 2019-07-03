@@ -1,6 +1,16 @@
 <div ng-controller="userController as vm">
     <div class="ui container">
-        <h2 class="ui header">Users</h2>
+        <div class="ui pointing menu">
+            <h3 class="ui header item active">Users</h3>
+            <div class="right menu">
+                <div class="item">
+                    <div class="ui transparent icon input">
+                        <input type="text" placeholder="Search users...">
+                        <i class="search link icon"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
         <table class="ui inverted blue red table" style="table-layout: fixed">
             <tr>
                 <th>ID</th>

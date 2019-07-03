@@ -13,7 +13,13 @@
                     params: {limit: "@limit"}
                 }
             }),
-            count: $resource("https://localhost:44302/api/admin/transactions/count")
+            count: $resource("https://localhost:44302/api/admin/transactions/count"),
+            search: $resource("https://localhost:44302/api/admin/transactions/search/:string",{
+                qeury: {
+                    method: "GET",
+                    params: {string: "@string"}
+                }
+            })
         }
     }
 }())
