@@ -17,5 +17,6 @@
         .when("/users", {
             templateUrl: "/app/users/user.html"
         })
+        
     }
 }());

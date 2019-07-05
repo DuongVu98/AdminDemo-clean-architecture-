@@ -197,7 +197,7 @@ namespace AdminDemo.Usecases.RepositoriesImpl
 
 //                string sql = "select transactions.id, locate(@str, users.user_name) from transactions inner join countries inner join users on transactions.countries_id = countries.id and transactions.users_id = users.id where locate(@str, users.user_name)>0";
                 string sql =
-                    "select transactions.id from transactions inner join countries inner join users on transactions.countries_id = countries.id and transactions.users_id=users.id where users.user_name or users.last_name or users.first_name like @str";
+                    "select transactions.id from transactions inner join countries inner join users on transactions.countries_id = countries.id and transactions.users_id=users.id where users.user_name like @str or users.last_name like @str or users.first_name like @str";
                 MySqlCommand command = new MySqlCommand(sql, _connection);
                 command.Parameters.Add(new MySqlParameter("@str", MySqlDbType.VarChar)).Value = "%"+str+"%";
 
