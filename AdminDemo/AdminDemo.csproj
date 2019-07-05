@@ -13,7 +13,11 @@
         <PackageReference Include="Microsoft.AspNetCore.HttpsPolicy" Version="2.2.0" />
         <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="2.2.0" />
         <PackageReference Include="Microsoft.AspNetCore.StaticFiles" Version="2.2.0" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.2.4" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="2.2.4" />
+        <PackageReference Include="MySql.Data.EntityFrameworkCore" Version="8.0.16" />
         <PackageReference Include="MySqlConnector" Version="0.57.0-beta1" />
+        <DotNetCliToolReference Include="Microsoft.EntityFrameworkCore.Tools.DotNet" Version="2.0.3" />
         <PackageReference Include="NLog" Version="4.6.5" />
     </ItemGroup>
 
@@ -24,7 +28,15 @@
 
 
     <ItemGroup>
+      <Folder Include="Usecases\EFRepositoriesImpl" />
       <Folder Include="wwwroot\app\routes" />
+    </ItemGroup>
+
+
+    <ItemGroup>
+      <Compile Update="Startup.cs">
+        <DependentUpon>appsettings.json</DependentUpon>
+      </Compile>
     </ItemGroup>
 
 </Project>

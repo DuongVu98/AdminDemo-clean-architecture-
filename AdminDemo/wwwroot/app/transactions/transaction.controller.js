@@ -49,6 +49,20 @@
                 vm.transactions = data
             })
         }
+
+        vm.search = () => {
+            console.log("Search !!")
+            console.log(vm.searchString)
+            if(vm.searchString != null){
+                transactionResource.search.query({ string: vm.searchString }, data => {
+                    vm.transactions = data
+                })
+            }else{
+                transactionResource.transactions.query({ limit: 0 }, data => {
+                    vm.transactions = data
+                })
+            }
+        }
     }
 
 }())

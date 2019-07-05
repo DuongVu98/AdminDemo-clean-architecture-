@@ -65,7 +65,8 @@ namespace AdminDemo
             
             services.AddScoped<TransactionsQuery, TransactionsQuery>();
 
-            services.AddScoped<ISearchingRepository<Transaction>, MySqlTransactionRepository>();
+            services.AddScoped<ISearchingService<Transaction>, MySqlTransactionRepository>();
+            services.AddScoped<ICountingService<Transaction>, MySqlTransactionRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -56,7 +56,7 @@ namespace AdminDemo.Drivers.RestControllers
         }
         
         // POST /api/admin/transactions/search/{str}
-        [HttpPost("transactions/search/{str}")]
+        [HttpGet("transactions/search/{str}")]
         public List<PopulatedTransaction> TransactionsSearching(string str)
         {
             return _transactionPresenter.FindAllPopulatedTransactions(_usecases.TransactionsSearching(str));

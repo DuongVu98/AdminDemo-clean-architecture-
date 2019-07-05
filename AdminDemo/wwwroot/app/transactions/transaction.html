@@ -1,7 +1,23 @@
-<!-- <link rel="stylesheet" href="app/transactions/transactions.css"> -->
 <div ng-controller="transactionController as vm">
     <div class="ui container">
-        <h2 class="ui header">Transactions</h2>
+        <div class="ui pointing menu">
+            <h3 class="ui header item active">Transactions</h3>
+            <div class="right menu">
+                <div class="item">
+                    <div class="ui transparent icon input">
+                        <form>
+                            <div class="ui transparent input">
+                                <input type="text" placeholder="Search users..." ng-model="vm.searchString">
+                            </div>
+                            <button class="circular ui icon button" ng-click="vm.search()">
+                                <i class="search link icon"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <table class="ui inverted green table" align="center" style="table-layout: fixed">
             <tr>
                 <th>Transaction ID</th>
