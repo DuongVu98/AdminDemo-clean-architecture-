@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using AdminDemo.Adapters.Models;
 using AdminDemo.Adapters.ModelsBuilder;
 using AdminDemo.Domains.Models;
 using AdminDemo.Usecases.Interactors;
@@ -14,25 +15,35 @@ namespace AdminDemo.Drivers.RestControllers
     public class TestController
     {
         private AdminUseCases _adminUseCases;
+        
         private TransactionBuilder _transactionBuilder;
+        private UserBuilder _userBuilder;
 
-        public TestController(AdminUseCases adminUseCases, TransactionBuilder transactionBuilder)
+        public TestController(AdminUseCases adminUseCases, TransactionBuilder transactionBuilder, UserBuilder userBuilder)
         {
             _adminUseCases = adminUseCases;
             _transactionBuilder = transactionBuilder;
+            _userBuilder = userBuilder;
         }
 
-        [HttpGet("transactions")]
-        public async Task<ActionResult<IEnumerable<Transactions>>> FindAllTransactions()
+        [HttpGet("transactions-web/{limit}")]
+        public async Task<ActionResult<TransactionWeb>> FindAllTransactionsWeb(int limit)
         {
+            TransactionWeb transactionWeb = new TransactionWeb();
+            transactionWeb.Transactions = _transactionBuilder.ListBuild(_adminUseCases.FindAllTransactions(limit));
+            transactionWeb.Count = _adminUseCases.TransactionsCount();
 
-            return _transactionBuilder.ListBuild(_adminUseCases.FindAllTransactions(0));
+            return transactionWeb;
         }
 
-        [HttpGet("users")]
-        public async Task<ActionResult<IEnumerable<Users>>> FindAllUsers()
+        [HttpGet("users-web/{limit}")]
+        public async Task<ActionResult<UserWeb>> FindAllUsersWeb(int limit)
         {
-            return _adminUseCases.FindAllUsers(0);
+            UserWeb userWeb = new UserWeb();
+            userWeb.Users = _userBuilder.ListBuild(_adminUseCases.FindAllUsers(limit));
+            userWeb.Count = _adminUseCases.UsersCount();
+
+            return userWeb;
         }
     }
 }

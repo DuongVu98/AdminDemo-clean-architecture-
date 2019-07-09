@@ -16,6 +16,7 @@ namespace AdminDemo.Adapters.ModelsBuilder
         public Transactions Build(Transactions transaction)
         {
             transaction.Users = _adminUseCases.FindUserById(transaction.UsersId);
+            transaction.Countries = _adminUseCases.FindCountryById(transaction.CountriesId);
 
             return transaction;
         }
@@ -25,6 +26,7 @@ namespace AdminDemo.Adapters.ModelsBuilder
             foreach (var transaction in transactions)
             {
                 transaction.Users = _adminUseCases.FindUserById(transaction.UsersId);
+                transaction.Countries = _adminUseCases.FindCountryById(transaction.CountriesId);
             }
 
             return transactions;

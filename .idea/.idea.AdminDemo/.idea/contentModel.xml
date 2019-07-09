@@ -9,9 +9,12 @@
           <e p="Models" t="Include">
             <e p="PopulatedTransaction.cs" t="Include" />
             <e p="PopulatedUser.cs" t="Include" />
+            <e p="TransactionWeb.cs" t="Include" />
+            <e p="UserWeb.cs" t="Include" />
           </e>
           <e p="ModelsBuilder" t="Include">
             <e p="TransactionBuilder.cs" t="Include" />
+            <e p="UserBuilder.cs" t="Include" />
           </e>
           <e p="Presenters" t="Include">
             <e p="TransactionPresenter.cs" t="Include" />
@@ -81,6 +84,8 @@
             <e p="DatabaseConnectionConfiguration.cs" t="Include" />
           </e>
           <e p="EFRepositoriesImpl" t="Include">
+            <e p="EFCountryRepository.cs" t="Include" />
+            <e p="EFProvinceRepositoy.cs" t="Include" />
             <e p="EFTransactionsRepository.cs" t="Include" />
             <e p="EFUsersRepository.cs" t="Include" />
           </e>

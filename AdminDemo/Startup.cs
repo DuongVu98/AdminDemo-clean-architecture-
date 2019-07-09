@@ -76,8 +76,11 @@ namespace AdminDemo
             services.AddScoped<AdminUseCases, AdminUseCases>();
             services.AddScoped<ITransactionRepository, EFTransactionsRepository>();
             services.AddScoped<IUserRepository, EFUsersRepository>();
+            services.AddScoped<ICountryRepository, EFCountryRepository>();
+            services.AddScoped<IProvinceRepository, EFProvinceRepositoy>();
             
             services.AddScoped<TransactionBuilder, TransactionBuilder>();
+            services.AddScoped<UserBuilder, UserBuilder>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

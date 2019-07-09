@@ -10,11 +10,15 @@ namespace AdminDemo.Usecases.Interactors
     {
         private ITransactionRepository _transactionRepository;
         private IUserRepository _userRepository;
+        private ICountryRepository _countryRepository;
+        private IProvinceRepository _provinceRepository;
 
-        public AdminUseCases(ITransactionRepository transactionRepository, IUserRepository userRepository)
+        public AdminUseCases(ITransactionRepository transactionRepository, IUserRepository userRepository, ICountryRepository countryRepository, IProvinceRepository provinceRepository)
         {
             _transactionRepository = transactionRepository;
             _userRepository = userRepository;
+            _countryRepository = countryRepository;
+            _provinceRepository = provinceRepository;
         }
 
         // Transactions Business Logics
@@ -52,9 +56,50 @@ namespace AdminDemo.Usecases.Interactors
             return _userRepository.FindAll(limit);
         }
 
+        public int UsersCount()
+        {
+            return _userRepository.Count();
+        }
+
         public Users FindUserById(string id)
         {
             return _userRepository.FindById(id);
         }
+
+
+        // Countries Business Logic
+
+        public List<Countries> FindAllCountries(int limit)
+        {
+            return _countryRepository.FindAll(limit);
+        }
+
+        public int CountryCount()
+        {
+            return _countryRepository.Count();
+        }
+
+        public Countries FindCountryById(string id)
+        {
+            return _countryRepository.FindById(id);
+        }
+        
+        
+        // Province Business Logic
+        public List<Provinces> FindAllProvincesByCountryId(string id, int limit)
+        {
+            return _provinceRepository.FindByCountryId(id, limit);
+        }
+
+        public int ProvinceByCountryIdCount(string id)
+        {
+            return _provinceRepository.CountFindByCountryId(id);
+        }
+
+        public Provinces FindProvinceById(string id)
+        {
+            return _provinceRepository.FindById(id);
+        }
+
     }
 }
