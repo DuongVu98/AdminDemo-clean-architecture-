@@ -36,7 +36,7 @@ namespace AdminDemo.Drivers.RestControllers
             return transactionWeb;
         }
         
-        [HttpGet("transactions/{username}/{limit}")]
+        [HttpGet("transactions/search/by-user/{username}/{limit}")]
         public async Task<ActionResult<TransactionWeb>> TransactionSearchByUsername(int limit, string username)
         {
             TransactionWeb transactionWeb = new TransactionWeb();

@@ -7,6 +7,9 @@ namespace AdminDemo.Adapters.Models
     {
         private List<Transactions> transactions;
         private int count;
+        private int amountPerPage = 5;
+
+        
 
         public TransactionWeb()
         {
@@ -28,6 +31,12 @@ namespace AdminDemo.Adapters.Models
         {
             get => count;
             set => count = value;
+        }
+
+        public int AmountPerPage
+        {
+            get => amountPerPage;
+            set => amountPerPage = value;
         }
     }
 }
