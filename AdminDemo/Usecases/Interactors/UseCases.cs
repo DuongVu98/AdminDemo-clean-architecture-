@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using AdminDemo.Domains.Entities;
+using AdminDemo.Domains.Models;
 using AdminDemo.Usecases.Repositories;
 using AdminDemo.Usecases.RepositoriesImpl;
 
@@ -16,16 +17,19 @@ namespace AdminDemo.Usecases.Interactors
         private IRepository<Province> provinceRepository;
         private TransactionsQuery query;
 
-        public ISearchingService<Transaction> transactionsSearch;
-        public ICountingService<Transaction> transactionsCounting;
+        private IRepository<Transactions> efTransactionsRepository;
+        
+        private ISearchingService<Transaction> transactionsSearch;
+        private ICountingService<Transaction> transactionsCounting;
 
-        public UseCases(IRepository<User> userRepository, IRepository<Transaction> transactionRepository, IRepository<Country> countryRepository, IRepository<Province> provinceRepository, TransactionsQuery query, ISearchingService<Transaction> transactionsSearch, ICountingService<Transaction> transactionsCounting)
+        public UseCases(IRepository<User> userRepository, IRepository<Transaction> transactionRepository, IRepository<Country> countryRepository, IRepository<Province> provinceRepository, TransactionsQuery query, IRepository<Transactions> efTransactionsRepository, ISearchingService<Transaction> transactionsSearch, ICountingService<Transaction> transactionsCounting)
         {
             this.userRepository = userRepository;
             this.transactionRepository = transactionRepository;
             this.countryRepository = countryRepository;
             this.provinceRepository = provinceRepository;
             this.query = new TransactionsQuery(5,0);
+            this.efTransactionsRepository = efTransactionsRepository;
             this.transactionsSearch = transactionsSearch;
             this.transactionsCounting = transactionsCounting;
         }
@@ -94,6 +98,11 @@ namespace AdminDemo.Usecases.Interactors
             }
             
             return transactions;
+        }
+
+        public List<Transactions> GetAllEfTransactions()
+        {
+            return efTransactionsRepository.FindAll();
         }
     }
 }

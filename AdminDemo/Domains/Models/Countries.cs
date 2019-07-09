@@ -1,7 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
-namespace AdminDemo.Models
+namespace AdminDemo.Domains.Models
 {
     public partial class Countries
     {

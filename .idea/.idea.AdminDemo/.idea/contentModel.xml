@@ -28,6 +28,13 @@
             <e p="Transaction.cs" t="Include" />
             <e p="User.cs" t="Include" />
           </e>
+          <e p="Models" t="Include">
+            <e p="Countries.cs" t="Include" />
+            <e p="mydbContext.cs" t="Include" />
+            <e p="Provinces.cs" t="Include" />
+            <e p="Transactions.cs" t="Include" />
+            <e p="Users.cs" t="Include" />
+          </e>
         </e>
         <e p="Drivers" t="Include">
           <e p="PageControllers" t="Include">
@@ -36,13 +43,6 @@
           <e p="RestControllers" t="Include">
             <e p="AdminController.cs" t="Include" />
           </e>
-        </e>
-        <e p="Models" t="Include">
-          <e p="Countries.cs" t="Include" />
-          <e p="mydbContext.cs" t="Include" />
-          <e p="Provinces.cs" t="Include" />
-          <e p="Transactions.cs" t="Include" />
-          <e p="Users.cs" t="Include" />
         </e>
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
@@ -76,7 +76,9 @@
           <e p="DatabaseConfiguration" t="Include">
             <e p="DatabaseConnectionConfiguration.cs" t="Include" />
           </e>
-          <e p="EFRepositoriesImpl" t="Include" />
+          <e p="EFRepositoriesImpl" t="Include">
+            <e p="EFTransactionsRepository.cs" t="Include" />
+          </e>
           <e p="Interactors" t="Include">
             <e p="TransactionsQuery.cs" t="Include" />
             <e p="UseCases.cs" t="Include" />

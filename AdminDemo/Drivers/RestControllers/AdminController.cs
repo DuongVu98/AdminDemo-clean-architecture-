@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using AdminDemo.Adapters.Models;
 using AdminDemo.Adapters.Presenters;
 using AdminDemo.Domains.Entities;
+using AdminDemo.Domains.Models;
 using AdminDemo.Usecases.Interactors;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Routing;
@@ -76,6 +77,12 @@ namespace AdminDemo.Drivers.RestControllers
             {
                 query
             };
+        }
+
+        [HttpGet("transactions/ef")]
+        public List<Transactions> GetAllEfTransactions()
+        {
+            return _usecases.GetAllEfTransactions();
         }
 
     }

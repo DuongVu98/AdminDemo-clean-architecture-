@@ -5,6 +5,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using AdminDemo.Adapters.Presenters;
 using AdminDemo.Domains.Entities;
+using AdminDemo.Domains.Models;
+using AdminDemo.Usecases.EFRepositoriesImpl;
 using AdminDemo.Usecases.Interactors;
 using AdminDemo.Usecases.Repositories;
 using AdminDemo.Usecases.RepositoriesImpl;
@@ -13,6 +15,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.FileProviders;
@@ -37,12 +40,7 @@ namespace AdminDemo
                 options.CheckConsentNeeded = context => true;
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
-
-            services.Configure<TransactionsQuery>(query =>
-            {
-                query.TransactionsPerQuery = 2;
-                query.NumberOfAllTransactions = 0;
-            });
+            
             services.AddCors(options =>
             {
                 options.AddPolicy("CorsPolicy",
@@ -52,12 +50,19 @@ namespace AdminDemo
                         .AllowCredentials());
             });
 
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+//            services.AddDbContext<mydbContext>(options => { options.UseMySQL(Configuration.GetConnectionString("")); });
+            
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2).AddJsonOptions(x => x.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);;
 
             services.AddScoped<IRepository<User>, MySqlUserRepository>();
             services.AddScoped<IRepository<Transaction>, MySqlTransactionRepository>();
             services.AddScoped<IRepository<Country>, MySqlCountryRepository>();
             services.AddScoped<IRepository<Province>, MySqlProvinceRepository>();
+            
+            services.AddScoped<IRepository<Transactions>, EFTransactionsRepository>();
+            
+            services.AddScoped<ISearchingService<Transaction>, MySqlTransactionRepository>();
+            services.AddScoped<ICountingService<Transaction>, MySqlTransactionRepository>();
             
             services.AddScoped<UseCases, UseCases>();
             services.AddScoped<TransactionPresenter, TransactionPresenter>();
@@ -65,8 +70,7 @@ namespace AdminDemo
             
             services.AddScoped<TransactionsQuery, TransactionsQuery>();
 
-            services.AddScoped<ISearchingService<Transaction>, MySqlTransactionRepository>();
-            services.AddScoped<ICountingService<Transaction>, MySqlTransactionRepository>();
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

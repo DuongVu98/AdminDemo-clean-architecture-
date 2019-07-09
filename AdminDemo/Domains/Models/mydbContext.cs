@@ -1,8 +1,6 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata;
+﻿using Microsoft.EntityFrameworkCore;
 
-namespace AdminDemo.Models
+namespace AdminDemo.Domains.Models
 {
     public partial class mydbContext : DbContext
     {
