@@ -19,11 +19,13 @@ namespace AdminDemo.Drivers.RestControllers
         private TransactionPresenter _transactionPresenter;
         private UserPresenter _userPresenter;
 
-        public AdminController(UseCases usecases, TransactionPresenter transactionPresenter, UserPresenter userPresenter)
+        private AdminUseCases _adminUseCases;
+        public AdminController(UseCases usecases, TransactionPresenter transactionPresenter, UserPresenter userPresenter, AdminUseCases adminUseCases)
         {
             _usecases = usecases;
             _transactionPresenter = transactionPresenter;
             _userPresenter = userPresenter;
+            _adminUseCases = adminUseCases;
         }
 
         // GET /api/admin/users
@@ -85,5 +87,10 @@ namespace AdminDemo.Drivers.RestControllers
             return _usecases.GetAllEfTransactions();
         }
 
+        [HttpGet("test")]
+        public async Task<ActionResult<IEnumerable<Transactions>>> FindAllTransactions()
+        {
+            return _adminUseCases.FindAllTransactions(1);
+        }
     }
 }

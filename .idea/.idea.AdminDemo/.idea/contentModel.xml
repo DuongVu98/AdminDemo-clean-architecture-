@@ -10,6 +10,9 @@
             <e p="PopulatedTransaction.cs" t="Include" />
             <e p="PopulatedUser.cs" t="Include" />
           </e>
+          <e p="ModelsBuilder" t="Include">
+            <e p="TransactionBuilder.cs" t="Include" />
+          </e>
           <e p="Presenters" t="Include">
             <e p="TransactionPresenter.cs" t="Include" />
             <e p="UserPresenter.cs" t="Include" />
@@ -42,6 +45,7 @@
           </e>
           <e p="RestControllers" t="Include">
             <e p="AdminController.cs" t="Include" />
+            <e p="TestController.cs" t="Include" />
           </e>
         </e>
         <e p="obj" t="ExcludeRecursive">
@@ -78,8 +82,10 @@
           </e>
           <e p="EFRepositoriesImpl" t="Include">
             <e p="EFTransactionsRepository.cs" t="Include" />
+            <e p="EFUsersRepository.cs" t="Include" />
           </e>
           <e p="Interactors" t="Include">
+            <e p="AdminUseCases.cs" t="Include" />
             <e p="TransactionsQuery.cs" t="Include" />
             <e p="UseCases.cs" t="Include" />
           </e>
