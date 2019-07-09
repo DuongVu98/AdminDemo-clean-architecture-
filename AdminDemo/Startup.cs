@@ -58,9 +58,7 @@ namespace AdminDemo
             services.AddScoped<IRepository<Transaction>, MySqlTransactionRepository>();
             services.AddScoped<IRepository<Country>, MySqlCountryRepository>();
             services.AddScoped<IRepository<Province>, MySqlProvinceRepository>();
-            
-            services.AddScoped<IRepository<Transactions>, EFTransactionsRepository>();
-            
+
             services.AddScoped<ISearchingService<Transaction>, MySqlTransactionRepository>();
             services.AddScoped<ICountingService<Transaction>, MySqlTransactionRepository>();
             
