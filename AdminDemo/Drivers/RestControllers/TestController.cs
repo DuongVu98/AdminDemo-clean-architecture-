@@ -26,7 +26,7 @@ namespace AdminDemo.Drivers.RestControllers
             _userBuilder = userBuilder;
         }
 
-        [HttpGet("transactions-web/{limit}")]
+        [HttpGet("transactions/{limit}")]
         public async Task<ActionResult<TransactionWeb>> FindAllTransactionsWeb(int limit)
         {
             TransactionWeb transactionWeb = new TransactionWeb();
@@ -35,8 +35,21 @@ namespace AdminDemo.Drivers.RestControllers
 
             return transactionWeb;
         }
+        
+        [HttpGet("transactions/{username}/{limit}")]
+        public async Task<ActionResult<TransactionWeb>> TransactionSearchByUsername(int limit, string username)
+        {
+            TransactionWeb transactionWeb = new TransactionWeb();
+            transactionWeb.Transactions = _transactionBuilder.ListBuild(_adminUseCases.TransactionsSearchByUserName(username, limit));
+            transactionWeb.Count = _adminUseCases.transactionsSearchByUserNameCount(username);
 
-        [HttpGet("users-web/{limit}")]
+            return transactionWeb;
+        }
+
+        
+        
+        
+        [HttpGet("users/{limit}")]
         public async Task<ActionResult<UserWeb>> FindAllUsersWeb(int limit)
         {
             UserWeb userWeb = new UserWeb();

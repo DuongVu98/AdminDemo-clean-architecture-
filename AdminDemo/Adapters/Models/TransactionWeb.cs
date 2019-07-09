@@ -5,7 +5,7 @@ namespace AdminDemo.Adapters.Models
 {
     public class TransactionWeb
     {
-        private List<Transactions> list;
+        private List<Transactions> transactions;
         private int count;
 
         public TransactionWeb()
@@ -14,14 +14,14 @@ namespace AdminDemo.Adapters.Models
 
         public TransactionWeb(List<Transactions> transactions, int count)
         {
-            this.list = transactions;
+            this.transactions = transactions;
             this.count = count;
         }
 
         public List<Transactions> Transactions
         {
-            get => list;
-            set => list = value;
+            get => transactions;
+            set => transactions = value;
         }
 
         public int Count

@@ -37,9 +37,9 @@ namespace AdminDemo.Usecases.Interactors
             return _transactionRepository.FindById(id);
         }
 
-        public List<Transactions> transactionsSearchByUserName(string userName)
+        public List<Transactions> TransactionsSearchByUserName(string userName, int limit)
         {
-            return _transactionRepository.SearchByUserName(userName);
+            return _transactionRepository.SearchByUserName(userName, limit);
         }
 
         public int transactionsSearchByUserNameCount(string userName)
@@ -50,7 +50,10 @@ namespace AdminDemo.Usecases.Interactors
         
 
         // Users Business Logic
-
+        public Users FindUserById(string id)
+        {
+            return _userRepository.FindById(id);
+        }
         public List<Users> FindAllUsers(int limit)
         {
             return _userRepository.FindAll(limit);
@@ -61,14 +64,14 @@ namespace AdminDemo.Usecases.Interactors
             return _userRepository.Count();
         }
 
-        public Users FindUserById(string id)
-        {
-            return _userRepository.FindById(id);
-        }
+        
 
 
         // Countries Business Logic
-
+        public Countries FindCountryById(string id)
+        {
+            return _countryRepository.FindById(id);
+        }
         public List<Countries> FindAllCountries(int limit)
         {
             return _countryRepository.FindAll(limit);
@@ -79,27 +82,24 @@ namespace AdminDemo.Usecases.Interactors
             return _countryRepository.Count();
         }
 
-        public Countries FindCountryById(string id)
-        {
-            return _countryRepository.FindById(id);
-        }
+        
         
         
         // Province Business Logic
+        public Provinces FindProvinceById(string id)
+        {
+            return _provinceRepository.FindById(id);
+        }
         public List<Provinces> FindAllProvincesByCountryId(string id, int limit)
         {
             return _provinceRepository.FindByCountryId(id, limit);
         }
-
         public int ProvinceByCountryIdCount(string id)
         {
             return _provinceRepository.CountFindByCountryId(id);
         }
 
-        public Provinces FindProvinceById(string id)
-        {
-            return _provinceRepository.FindById(id);
-        }
+        
 
     }
 }

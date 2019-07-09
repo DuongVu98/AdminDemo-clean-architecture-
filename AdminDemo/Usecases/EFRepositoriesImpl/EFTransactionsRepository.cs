@@ -33,10 +33,11 @@ namespace AdminDemo.Usecases.EFRepositoriesImpl
 
         public List<Transactions> SearchByUserName(string userName)
         {
+            string str = "%" + userName + "%";
             List<Transactions> transactions = new List<Transactions>();
             var innerJoin = from t in context.Transactions
                 join u in context.Users on t.UsersId equals u.Id
-                where EF.Functions.Like(u.UserName, "%"+userName+"%")
+                where EF.Functions.Like(u.UserName, str)
                 select new
                 {
                     Id = t.Id
@@ -72,10 +73,13 @@ namespace AdminDemo.Usecases.EFRepositoriesImpl
         
         public List<Transactions> SearchByUserName(string userName, int limit)
         {
+            string str = "%" + userName + "%";
             List<Transactions> transactions = new List<Transactions>();
             var innerJoin = (from t in context.Transactions
                 join u in context.Users on t.UsersId equals u.Id
-                where EF.Functions.Like(u.UserName, "%"+userName+"%")
+                where EF.Functions.Like(u.UserName,  str) ||
+                      EF.Functions.Like(u.FirstName, str) ||
+                      EF.Functions.Like(u.LastName, str)
                 select new
                 {
                     Id = t.Id
@@ -126,9 +130,10 @@ namespace AdminDemo.Usecases.EFRepositoriesImpl
 
         public int CountSearchByUserName(string userName)
         {
+            string str = "%" + userName + "%";
             return (from t in context.Transactions
                 join u in context.Users on t.UsersId equals u.Id
-                where EF.Functions.Like(u.UserName, "%"+userName+"%")
+                where EF.Functions.Like(u.UserName, str)
                 select new
                 {
                     Id = t.Id
