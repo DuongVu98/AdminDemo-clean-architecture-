@@ -2,22 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9b1e9abe-a836-495d-b80a-7a79d9119bd3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/AdminDemo/Drivers/RestControllers/TestController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AdminDemo/Usecases/EFRepositoriesImpl/EFUsersRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AdminDemo/Usecases/Interactors/AdminUseCases.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.AdminDemo/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AdminDemo/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.AdminDemo/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AdminDemo/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminDemo/Drivers/RestControllers/AdminController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AdminDemo/Drivers/RestControllers/AdminController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminDemo/Adapters/ModelsBuilder/TransactionBuilder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AdminDemo/Adapters/ModelsBuilder/TransactionBuilder.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminDemo/Drivers/RestControllers/TestController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AdminDemo/Drivers/RestControllers/TestController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AdminDemo/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AdminDemo/Startup.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminDemo/Usecases/Repositories/IUserRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AdminDemo/Usecases/Repositories/IUserRepository.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AdminDemo/bin/Debug/netcoreapp2.2/AdminDemo.dll" beforeDir="false" afterPath="$PROJECT_DIR$/AdminDemo/bin/Debug/netcoreapp2.2/AdminDemo.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AdminDemo/bin/Debug/netcoreapp2.2/AdminDemo.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/AdminDemo/bin/Debug/netcoreapp2.2/AdminDemo.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminDemo/obj/AdminDemo.csproj.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/AdminDemo/obj/AdminDemo.csproj.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminDemo/obj/AdminDemo.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/AdminDemo/obj/AdminDemo.csproj.nuget.g.props" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AdminDemo/obj/Debug/netcoreapp2.2/AdminDemo.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/AdminDemo/obj/Debug/netcoreapp2.2/AdminDemo.csproj.CoreCompileInputs.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AdminDemo/obj/Debug/netcoreapp2.2/AdminDemo.dll" beforeDir="false" afterPath="$PROJECT_DIR$/AdminDemo/obj/Debug/netcoreapp2.2/AdminDemo.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AdminDemo/obj/Debug/netcoreapp2.2/AdminDemo.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/AdminDemo/obj/Debug/netcoreapp2.2/AdminDemo.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminDemo/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/AdminDemo/obj/project.assets.json" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -156,39 +148,72 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/AdminDemo/Drivers/RestControllers/TestController.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="22" column="63" selection-start-line="22" selection-start-column="63" selection-end-line="22" selection-end-column="63" />
+            <state relative-caret-position="476">
+              <caret line="28" column="88" selection-start-line="28" selection-start-column="88" selection-end-line="28" selection-end-column="88" />
               <folding>
-                <marker date="1562689444361" expanded="true" signature="6:203" ph="..." />
-                <marker date="1562689444361" expanded="true" signature="248:718" ph="{...}" />
-                <marker date="1562689444361" expanded="true" signature="332:716" ph="{...}" />
-                <marker date="1562689444361" expanded="true" signature="444:508" ph="{...}" />
-                <marker date="1562689444361" expanded="true" signature="632:710" ph="{...}" />
+                <marker date="1562690891016" expanded="true" signature="6:243" ph="..." />
+                <marker date="1562690891016" expanded="true" signature="288:1113" ph="{...}" />
+                <marker date="1562690891016" expanded="true" signature="372:1111" ph="{...}" />
+                <marker date="1562690891016" expanded="true" signature="579:697" ph="{...}" />
+                <marker date="1562690891016" expanded="true" signature="821:931" ph="{...}" />
+                <marker date="1562690891016" expanded="true" signature="1034:1105" ph="{...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/AdminDemo/Domains/Models/Transactions.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="11" column="28" selection-start-line="11" selection-start-column="28" selection-end-line="11" selection-end-column="28" />
+              <folding>
+                <marker date="1562582983296" expanded="true" signature="6:58" ph="..." />
+                <marker date="1562582983296" expanded="true" signature="94:497" ph="{...}" />
+                <marker date="1562582983296" expanded="true" signature="134:495" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/AdminDemo/Adapters/ModelsBuilder/TransactionBuilder.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="6" column="35" lean-forward="true" selection-start-line="6" selection-start-column="35" selection-end-line="6" selection-end-column="35" />
+              <folding>
+                <marker date="1562690891040" expanded="true" signature="6:103" ph="..." />
+                <marker date="1562690891040" expanded="true" signature="147:869" ph="{...}" />
+                <marker date="1562690891040" expanded="true" signature="185:867" ph="{...}" />
+                <marker date="1562690891040" expanded="true" signature="301:365" ph="{...}" />
+                <marker date="1562690891040" expanded="true" signature="426:561" ph="{...}" />
+                <marker date="1562690891040" expanded="true" signature="639:861" ph="{...}" />
+                <marker date="1562690891040" expanded="true" signature="703:817" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/AdminDemo/Startup.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="435">
-              <caret line="76" column="69" selection-start-line="76" selection-start-column="69" selection-end-line="76" selection-end-column="69" />
+            <state relative-caret-position="469">
+              <caret line="79" column="72" selection-start-line="79" selection-start-column="72" selection-end-line="79" selection-end-column="72" />
               <folding>
-                <marker date="1562688472818" expanded="false" signature="6:727" ph="..." />
-                <marker date="1562688472818" expanded="true" signature="748:4169" ph="{...}" />
-                <marker date="1562688472818" expanded="true" signature="775:4167" ph="{...}" />
-                <marker date="1562688472818" expanded="true" signature="834:897" ph="{...}" />
-                <marker date="1562688472818" expanded="true" signature="1120:3203" ph="{...}" />
-                <marker date="1562688472818" expanded="true" signature="1206:1470" ph="{...}" />
-                <marker date="1562688472818" expanded="true" signature="1538:1787" ph="{...}" />
-                <marker date="1562688472818" expanded="true" signature="3391:4161" ph="{...}" />
-                <marker date="1562688472818" expanded="true" signature="3438:3515" ph="{...}" />
-                <marker date="1562688472818" expanded="true" signature="3532:3786" ph="{...}" />
-                <marker date="1562688472818" expanded="true" signature="3981:4149" ph="{...}" />
+                <marker date="1562691037089" expanded="false" signature="6:767" ph="..." />
+                <marker date="1562691037089" expanded="true" signature="788:4296" ph="{...}" />
+                <marker date="1562691037089" expanded="true" signature="815:4294" ph="{...}" />
+                <marker date="1562691037089" expanded="true" signature="874:937" ph="{...}" />
+                <marker date="1562691037089" expanded="true" signature="1160:3330" ph="{...}" />
+                <marker date="1562691037089" expanded="true" signature="1246:1510" ph="{...}" />
+                <marker date="1562691037089" expanded="true" signature="1578:1827" ph="{...}" />
+                <marker date="1562691037089" expanded="true" signature="3518:4288" ph="{...}" />
+                <marker date="1562691037089" expanded="true" signature="3565:3642" ph="{...}" />
+                <marker date="1562691037089" expanded="true" signature="3659:3913" ph="{...}" />
+                <marker date="1562691037089" expanded="true" signature="4108:4276" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -214,31 +239,39 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/AdminDemo/Pages/Index.cshtml.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/AdminDemo/Domains/Models/Provinces.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/AdminDemo/Domains/Models/Users.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AdminDemo/Pages/Error.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AdminDemo/Usecases/Repositories/ICountryRepository.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AdminDemo/Usecases/RepositoriesImpl/MySqlUserRepository.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AdminDemo/Usecases/RepositoriesImpl/MySqlTransactionRepository.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/AdminDemo/Pages/Error.cshtml.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/AdminDemo/Usecases/Interactors/TransactionsQuery.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/AdminDemo/Usecases/Repositories/ISearchingService.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/AdminDemo/Adapters/Presenters/TransactionPresenter.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/AdminDemo/Program.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/AdminDemo/Adapters/Presenters/UserPresenter.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/AdminDemo/Pages/Shared/_ValidationScriptsPartial.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/AdminDemo/app.config" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/AdminDemo/Adapters/Models/PopulatedUser.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/AdminDemo/Domains/Models/Transactions.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/AdminDemo/Startup.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/AdminDemo/Domains/Models/mydbContext.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/AdminDemo/Usecases/Interactors/UseCases.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/AdminDemo/Domains/Models/Countries.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/AdminDemo/Domains/Models/Provinces.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/AdminDemo/Domains/Models/Users.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AdminDemo/Domains/Entities/Transaction.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AdminDemo/Domains/Entities/Country.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AdminDemo/Adapters/Models/PopulatedTransaction.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AdminDemo/Pages/Privacy.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AdminDemo/Pages/Index.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AdminDemo/Usecases/DatabaseConfiguration/DatabaseConnectionConfiguration.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/AdminDemo/Pages/Error.cshtml.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/AdminDemo/Usecases/Interactors/TransactionsQuery.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AdminDemo/Pages/_ViewImports.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AdminDemo/Usecases/RepositoriesImpl/MySqlProvinceRepository.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/AdminDemo/Usecases/Repositories/ISearchingService.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/AdminDemo/Adapters/Presenters/TransactionPresenter.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/AdminDemo/Program.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/AdminDemo/Adapters/ModelsBuilder/TransactionBuilder.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AdminDemo/Drivers/RestControllers/TestController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/AdminDemo/Adapters/Presenters/UserPresenter.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AdminDemo/Usecases/Repositories/IUserRepository.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AdminDemo/Drivers/RestControllers/AdminController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AdminDemo/Usecases/Interactors/AdminUseCases.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/AdminDemo/Pages/Shared/_ValidationScriptsPartial.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AdminDemo/Usecases/Repositories/ITransactionRepository.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AdminDemo/Usecases/Repositories/ICountingService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AdminDemo/Usecases/EFRepositoriesImpl/EFTransactionsRepository.cs" root0="FORCE_HIGHLIGHTING" />
@@ -247,25 +280,17 @@
     <setting file="file://$PROJECT_DIR$/AdminDemo/Domains/Entities/Province.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AdminDemo/Usecases/Repositories/IRepository.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AdminDemo/Views/Home/Admin.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/AdminDemo/app.config" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/AdminDemo/Adapters/Models/PopulatedUser.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/AdminDemo/Domains/Models/Transactions.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AdminDemo/Pages/Shared/_Layout.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AdminDemo/Usecases/EFRepositoriesImpl/EFUsersRepository.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AdminDemo/Pages/Shared/_Homepage.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AdminDemo/Usecases/RepositoriesImpl/MySqlCountryRepository.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/AdminDemo/Startup.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/AdminDemo/Domains/Models/mydbContext.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AdminDemo/Pages/_ViewStart.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AdminDemo/Usecases/Repositories/IProvinceRepository.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/AdminDemo/Usecases/Interactors/UseCases.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/AdminDemo/Domains/Models/Countries.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AdminDemo/Pages/Shared/_CookieConsentPartial.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/AdminDemo/Domains/Entities/Province.cs" />
         <option value="$PROJECT_DIR$/AdminDemo/Usecases/Repositories/ICountryRepository.cs" />
         <option value="$PROJECT_DIR$/AdminDemo/Usecases/Repositories/IProvinceRepository.cs" />
         <option value="$PROJECT_DIR$/AdminDemo/Adapters/Models/FullTransaction.cs" />
@@ -314,8 +339,9 @@
         <option value="$PROJECT_DIR$/AdminDemo/Usecases/EFRepositoriesImpl/EFUsersRepository.cs" />
         <option value="$PROJECT_DIR$/AdminDemo/Usecases/Interactors/AdminUseCases.cs" />
         <option value="$PROJECT_DIR$/AdminDemo/Drivers/RestControllers/AdminController.cs" />
-        <option value="$PROJECT_DIR$/AdminDemo/Startup.cs" />
+        <option value="$PROJECT_DIR$/AdminDemo/Adapters/ModelsBuilder/TransactionBuilder.cs" />
         <option value="$PROJECT_DIR$/AdminDemo/Drivers/RestControllers/TestController.cs" />
+        <option value="$PROJECT_DIR$/AdminDemo/Startup.cs" />
       </list>
     </option>
   </component>
@@ -342,6 +368,19 @@
               <item name="" type="784c90a0:SolutionExplorerRootNode" />
               <item name="AdminDemo" type="24d0babc:SolutionExplorerModelNode" />
               <item name="AdminDemo" type="24d0babc:SolutionExplorerModelNode" />
+            </path>
+            <path>
+              <item name="" type="784c90a0:SolutionExplorerRootNode" />
+              <item name="AdminDemo" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="AdminDemo" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Adapters" type="24d0babc:SolutionExplorerModelNode" />
+            </path>
+            <path>
+              <item name="" type="784c90a0:SolutionExplorerRootNode" />
+              <item name="AdminDemo" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="AdminDemo" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Adapters" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="ModelsBuilder" type="24d0babc:SolutionExplorerModelNode" />
             </path>
             <path>
               <item name="" type="784c90a0:SolutionExplorerRootNode" />
@@ -485,12 +524,12 @@
       <workItem from="1562568335874" duration="1889000" />
       <workItem from="1562570384442" duration="11126000" />
       <workItem from="1562639790815" duration="5729000" />
-      <workItem from="1562683277096" duration="5501000" />
+      <workItem from="1562683277096" duration="7124000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="142725000" />
+    <option name="totallyTimeSpent" value="144348000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -503,9 +542,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17978723" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17978723" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Capture Tool" order="3" />
@@ -513,7 +551,7 @@
       <window_info id="Azure Explorer" order="5" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49933156" visible="true" weight="0.032467533" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49933156" visible="true" weight="0.032467533" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -554,23 +592,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/AdminDemo/Domains/Entities/Province.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" column="21" selection-start-line="23" selection-start-column="19" selection-end-line="23" selection-end-column="21" />
-          <folding>
-            <marker date="1561433610600" expanded="true" signature="36:1015" ph="{...}" />
-            <marker date="1561433610600" expanded="true" signature="64:1013" ph="{...}" />
-            <marker date="1561433610600" expanded="true" signature="232:252" ph="{...}" />
-            <marker date="1561433610600" expanded="true" signature="348:526" ph="{...}" />
-            <marker date="1561433610600" expanded="true" signature="552:626" ph="{...}" />
-            <marker date="1561433610600" expanded="true" signature="662:756" ph="{...}" />
-            <marker date="1561433610600" expanded="true" signature="792:886" ph="{...}" />
-            <marker date="1561433610600" expanded="true" signature="919:1007" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/AdminDemo/wwwroot/app/transactions/transaction.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -946,18 +967,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/AdminDemo/Domains/Models/Transactions.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="11" column="28" selection-start-line="11" selection-start-column="28" selection-end-line="11" selection-end-column="28" />
-          <folding>
-            <marker date="1562582983296" expanded="true" signature="6:58" ph="..." />
-            <marker date="1562582983296" expanded="true" signature="94:497" ph="{...}" />
-            <marker date="1562582983296" expanded="true" signature="134:495" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/AdminDemo/Domains/Models/mydbContext.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1980">
@@ -1192,26 +1201,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/AdminDemo/Startup.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="76" column="69" selection-start-line="76" selection-start-column="69" selection-end-line="76" selection-end-column="69" />
-          <folding>
-            <marker date="1562688472818" expanded="false" signature="6:727" ph="..." />
-            <marker date="1562688472818" expanded="true" signature="748:4169" ph="{...}" />
-            <marker date="1562688472818" expanded="true" signature="775:4167" ph="{...}" />
-            <marker date="1562688472818" expanded="true" signature="834:897" ph="{...}" />
-            <marker date="1562688472818" expanded="true" signature="1120:3203" ph="{...}" />
-            <marker date="1562688472818" expanded="true" signature="1206:1470" ph="{...}" />
-            <marker date="1562688472818" expanded="true" signature="1538:1787" ph="{...}" />
-            <marker date="1562688472818" expanded="true" signature="3391:4161" ph="{...}" />
-            <marker date="1562688472818" expanded="true" signature="3438:3515" ph="{...}" />
-            <marker date="1562688472818" expanded="true" signature="3532:3786" ph="{...}" />
-            <marker date="1562688472818" expanded="true" signature="3981:4149" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/AdminDemo/Drivers/RestControllers/AdminController.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -1235,16 +1224,65 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/AdminDemo/Domains/Models/Transactions.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="28" selection-start-line="11" selection-start-column="28" selection-end-line="11" selection-end-column="28" />
+          <folding>
+            <marker date="1562582983296" expanded="true" signature="6:58" ph="..." />
+            <marker date="1562582983296" expanded="true" signature="94:497" ph="{...}" />
+            <marker date="1562582983296" expanded="true" signature="134:495" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AdminDemo/Adapters/ModelsBuilder/TransactionBuilder.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="35" lean-forward="true" selection-start-line="6" selection-start-column="35" selection-end-line="6" selection-end-column="35" />
+          <folding>
+            <marker date="1562690891040" expanded="true" signature="6:103" ph="..." />
+            <marker date="1562690891040" expanded="true" signature="147:869" ph="{...}" />
+            <marker date="1562690891040" expanded="true" signature="185:867" ph="{...}" />
+            <marker date="1562690891040" expanded="true" signature="301:365" ph="{...}" />
+            <marker date="1562690891040" expanded="true" signature="426:561" ph="{...}" />
+            <marker date="1562690891040" expanded="true" signature="639:861" ph="{...}" />
+            <marker date="1562690891040" expanded="true" signature="703:817" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/AdminDemo/Drivers/RestControllers/TestController.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="63" selection-start-line="22" selection-start-column="63" selection-end-line="22" selection-end-column="63" />
+        <state relative-caret-position="476">
+          <caret line="28" column="88" selection-start-line="28" selection-start-column="88" selection-end-line="28" selection-end-column="88" />
           <folding>
-            <marker date="1562689444361" expanded="true" signature="6:203" ph="..." />
-            <marker date="1562689444361" expanded="true" signature="248:718" ph="{...}" />
-            <marker date="1562689444361" expanded="true" signature="332:716" ph="{...}" />
-            <marker date="1562689444361" expanded="true" signature="444:508" ph="{...}" />
-            <marker date="1562689444361" expanded="true" signature="632:710" ph="{...}" />
+            <marker date="1562690891016" expanded="true" signature="6:243" ph="..." />
+            <marker date="1562690891016" expanded="true" signature="288:1113" ph="{...}" />
+            <marker date="1562690891016" expanded="true" signature="372:1111" ph="{...}" />
+            <marker date="1562690891016" expanded="true" signature="579:697" ph="{...}" />
+            <marker date="1562690891016" expanded="true" signature="821:931" ph="{...}" />
+            <marker date="1562690891016" expanded="true" signature="1034:1105" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AdminDemo/Startup.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="469">
+          <caret line="79" column="72" selection-start-line="79" selection-start-column="72" selection-end-line="79" selection-end-column="72" />
+          <folding>
+            <marker date="1562691037089" expanded="false" signature="6:767" ph="..." />
+            <marker date="1562691037089" expanded="true" signature="788:4296" ph="{...}" />
+            <marker date="1562691037089" expanded="true" signature="815:4294" ph="{...}" />
+            <marker date="1562691037089" expanded="true" signature="874:937" ph="{...}" />
+            <marker date="1562691037089" expanded="true" signature="1160:3330" ph="{...}" />
+            <marker date="1562691037089" expanded="true" signature="1246:1510" ph="{...}" />
+            <marker date="1562691037089" expanded="true" signature="1578:1827" ph="{...}" />
+            <marker date="1562691037089" expanded="true" signature="3518:4288" ph="{...}" />
+            <marker date="1562691037089" expanded="true" signature="3565:3642" ph="{...}" />
+            <marker date="1562691037089" expanded="true" signature="3659:3913" ph="{...}" />
+            <marker date="1562691037089" expanded="true" signature="4108:4276" ph="{...}" />
           </folding>
         </state>
       </provider>

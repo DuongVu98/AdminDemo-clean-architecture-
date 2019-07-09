@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using AdminDemo.Adapters.ModelsBuilder;
 using AdminDemo.Domains.Models;
 using AdminDemo.Usecases.Interactors;
 using Google.Protobuf.WellKnownTypes;
@@ -13,16 +14,19 @@ namespace AdminDemo.Drivers.RestControllers
     public class TestController
     {
         private AdminUseCases _adminUseCases;
+        private TransactionBuilder _transactionBuilder;
 
-        public TestController(AdminUseCases adminUseCases)
+        public TestController(AdminUseCases adminUseCases, TransactionBuilder transactionBuilder)
         {
             _adminUseCases = adminUseCases;
+            _transactionBuilder = transactionBuilder;
         }
 
         [HttpGet("transactions")]
         public async Task<ActionResult<IEnumerable<Transactions>>> FindAllTransactions()
         {
-            return _adminUseCases.FindAllTransactions(0);
+
+            return _transactionBuilder.ListBuild(_adminUseCases.FindAllTransactions(0));
         }
 
         [HttpGet("users")]

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using AdminDemo.Adapters.ModelsBuilder;
 using AdminDemo.Adapters.Presenters;
 using AdminDemo.Domains.Entities;
 using AdminDemo.Domains.Models;
@@ -75,6 +76,8 @@ namespace AdminDemo
             services.AddScoped<AdminUseCases, AdminUseCases>();
             services.AddScoped<ITransactionRepository, EFTransactionsRepository>();
             services.AddScoped<IUserRepository, EFUsersRepository>();
+            
+            services.AddScoped<TransactionBuilder, TransactionBuilder>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
