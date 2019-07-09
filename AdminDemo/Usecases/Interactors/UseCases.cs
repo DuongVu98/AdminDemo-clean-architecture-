@@ -22,6 +22,7 @@ namespace AdminDemo.Usecases.Interactors
         private ISearchingService<Transaction> transactionsSearch;
         private ICountingService<Transaction> transactionsCounting;
 
+        // this.query = new TransactionsQuery(5,0);
         public UseCases(IRepository<User> userRepository, IRepository<Transaction> transactionRepository, IRepository<Country> countryRepository, IRepository<Province> provinceRepository, TransactionsQuery query, IRepository<Transactions> efTransactionsRepository, ISearchingService<Transaction> transactionsSearch, ICountingService<Transaction> transactionsCounting)
         {
             this.userRepository = userRepository;
