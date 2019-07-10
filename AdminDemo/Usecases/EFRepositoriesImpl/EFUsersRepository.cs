@@ -9,7 +9,7 @@ namespace AdminDemo.Usecases.EFRepositoriesImpl
     public class EFUsersRepository : IUserRepository
     {
         private mydbContext context =new mydbContext();
-        private int amount = 5;
+        private int amount = AppSetting.UsersPerQuery;
         
         public List<Users> FindAll()
         {

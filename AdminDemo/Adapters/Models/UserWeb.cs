@@ -7,7 +7,7 @@ namespace AdminDemo.Adapters.Models
     {
         private List<Users> users;
         private int count;
-        private int amountPerPage = 5;
+        private int amountPerPage = AppSetting.UsersPerQuery;
         
         
         public List<Users> Users
