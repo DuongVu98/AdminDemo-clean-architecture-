@@ -18,12 +18,14 @@ namespace AdminDemo.Drivers.RestControllers
         
         private TransactionBuilder _transactionBuilder;
         private UserBuilder _userBuilder;
+        private ProvinceBuilder _provinceBuilder;
 
-        public AdminController(AdminUseCases adminUseCases, TransactionBuilder transactionBuilder, UserBuilder userBuilder)
+        public AdminController(AdminUseCases adminUseCases, TransactionBuilder transactionBuilder, UserBuilder userBuilder, ProvinceBuilder provinceBuilder)
         {
             _adminUseCases = adminUseCases;
             _transactionBuilder = transactionBuilder;
             _userBuilder = userBuilder;
+            _provinceBuilder = provinceBuilder;
         }
 
         [HttpGet("transactions/{limit}")]
@@ -54,6 +56,10 @@ namespace AdminDemo.Drivers.RestControllers
         {
             UserWeb userWeb = new UserWeb();
             userWeb.Users = _userBuilder.ListBuild(_adminUseCases.FindAllUsers(limit));
+            foreach (var user in userWeb.Users)
+            {
+                user.Provinces = _provinceBuilder.Build(_adminUseCases.FindProvinceById(user.ProvincesId));
+            }
             userWeb.Count = _adminUseCases.UsersCount();
 
             return userWeb;
@@ -64,6 +70,10 @@ namespace AdminDemo.Drivers.RestControllers
         {
             UserWeb userWeb = new UserWeb();
             userWeb.Users = _userBuilder.ListBuild(_adminUseCases.UserSearchByUserName(username, limit));
+            foreach (var user in userWeb.Users)
+            {
+                user.Provinces = _provinceBuilder.Build(_adminUseCases.FindProvinceById(user.ProvincesId));
+            }
             userWeb.Count = _adminUseCases.UserSearchByUserNameCount(username);
 
             return userWeb;

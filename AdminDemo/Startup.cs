@@ -60,6 +60,7 @@ namespace AdminDemo
             
             services.AddScoped<TransactionBuilder, TransactionBuilder>();
             services.AddScoped<UserBuilder, UserBuilder>();
+            services.AddScoped<ProvinceBuilder, ProvinceBuilder>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
