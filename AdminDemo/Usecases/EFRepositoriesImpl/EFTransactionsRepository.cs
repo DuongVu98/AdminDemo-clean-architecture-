@@ -16,7 +16,7 @@ namespace AdminDemo.Usecases.EFRepositoriesImpl
             this.context = context;
         }
 
-        
+        //kmj
         public List<Transactions> FindAll()
         {
             return context.Transactions.ToList();
