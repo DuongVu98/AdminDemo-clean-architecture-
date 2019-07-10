@@ -51,9 +51,10 @@
             console.log("Search !!")
             console.log(vm.searchString)
             if(vm.searchString != null){
-                transactionResource.search.get({ string: vm.searchString, limit: 0 }, data => {
-                    vm.transactions = data.transactions
-                })
+                // transactionResource.search.get({ string: vm.searchString, limit: 0 }, data => {
+                //     vm.transactions = data.transactions
+                // })
+                getTransactionsSearch(transactionResource, vm, 0)
             }else{
                 transactionResource.transactions.get({ limit: 0 }, data => {
                     vm.transactions = data.transactions
@@ -68,7 +69,6 @@
         // var numberOfPages
 
         resource.transactions.get({ limit: 0 }, data => {
-            console.log(data)
             scope.transactions = data.transactions
             scope.transactionsCount = data.count
             scope.numberPerPages = data.amountPerPage
@@ -91,6 +91,22 @@
             // }
 
             generatePagesList(scope, numberPerPages, transactionsCount)
+        })
+    }
+
+    function getTransactionsQuery(resource, scope, limit){
+        resource.transactions.get({ limit: limit }, data => {
+            scope.transactions = data.transactions
+            scope.transactionsCount = data.count
+            scope.numberPerPages = data.amountPerPage
+        })
+    }
+
+    function getTransactionsSearch(resource, scope, limit){
+        resource.search.get({ string: scope.searchString, limit: limit }, data => {
+            scope.transactions = data.transactions
+            scope.transactionsCount = data.count
+            scope.numberPerPages = data.amountPerPage
         })
     }
 
