@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using AdminDemo.Domains.Entities;
 using AdminDemo.Domains.Models;
 
 namespace AdminDemo.Usecases.Repositories

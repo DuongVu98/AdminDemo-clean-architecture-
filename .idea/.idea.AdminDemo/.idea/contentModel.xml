@@ -7,18 +7,12 @@
       <e p="AdminDemo" t="IncludeRecursive">
         <e p="Adapters" t="Include">
           <e p="Models" t="Include">
-            <e p="PopulatedTransaction.cs" t="Include" />
-            <e p="PopulatedUser.cs" t="Include" />
             <e p="TransactionWeb.cs" t="Include" />
             <e p="UserWeb.cs" t="Include" />
           </e>
           <e p="ModelsBuilder" t="Include">
             <e p="TransactionBuilder.cs" t="Include" />
             <e p="UserBuilder.cs" t="Include" />
-          </e>
-          <e p="Presenters" t="Include">
-            <e p="TransactionPresenter.cs" t="Include" />
-            <e p="UserPresenter.cs" t="Include" />
           </e>
         </e>
         <e p="AdminDemo.csproj" t="IncludeRecursive" />
@@ -42,7 +36,6 @@
           </e>
           <e p="RestControllers" t="Include">
             <e p="AdminController.cs" t="Include" />
-            <e p="TestController.cs" t="Include" />
           </e>
         </e>
         <e p="obj" t="ExcludeRecursive">
@@ -85,23 +78,12 @@
           </e>
           <e p="Interactors" t="Include">
             <e p="AdminUseCases.cs" t="Include" />
-            <e p="TransactionsQuery.cs" t="Include" />
-            <e p="UseCases.cs" t="Include" />
           </e>
           <e p="Repositories" t="Include">
-            <e p="ICountingService.cs" t="Include" />
             <e p="ICountryRepository.cs" t="Include" />
             <e p="IProvinceRepository.cs" t="Include" />
-            <e p="IRepository.cs" t="Include" />
-            <e p="ISearchingService.cs" t="Include" />
             <e p="ITransactionRepository.cs" t="Include" />
             <e p="IUserRepository.cs" t="Include" />
-          </e>
-          <e p="RepositoriesImpl" t="Include">
-            <e p="MySqlCountryRepository.cs" t="Include" />
-            <e p="MySqlProvinceRepository.cs" t="Include" />
-            <e p="MySqlTransactionRepository.cs" t="Include" />
-            <e p="MySqlUserRepository.cs" t="Include" />
           </e>
         </e>
         <e p="Views" t="Include">

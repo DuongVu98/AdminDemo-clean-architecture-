@@ -8,8 +8,14 @@ namespace AdminDemo.Usecases.EFRepositoriesImpl
 {
     public class EFTransactionsRepository : ITransactionRepository
     {
-        private mydbContext context =new mydbContext();
+        private mydbContext context;
         private int amount = 5;
+
+        public EFTransactionsRepository(mydbContext context)
+        {
+            this.context = context;
+        }
+
         
         public List<Transactions> FindAll()
         {

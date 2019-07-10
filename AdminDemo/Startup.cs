@@ -4,13 +4,10 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using AdminDemo.Adapters.ModelsBuilder;
-using AdminDemo.Adapters.Presenters;
-using AdminDemo.Domains.Entities;
 using AdminDemo.Domains.Models;
 using AdminDemo.Usecases.EFRepositoriesImpl;
 using AdminDemo.Usecases.Interactors;
 using AdminDemo.Usecases.Repositories;
-using AdminDemo.Usecases.RepositoriesImpl;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -51,28 +48,10 @@ namespace AdminDemo
                         .AllowCredentials());
             });
 
-//            services.AddDbContext<mydbContext>(options => { options.UseMySQL(Configuration.GetConnectionString("")); });
+            services.AddDbContext<mydbContext>(options => { options.UseMySQL(Configuration.GetConnectionString("DefaultConnection")); });
             
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2).AddJsonOptions(x => x.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);;
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2).AddJsonOptions(x => x.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
 
-            services.AddScoped<IRepository<User>, MySqlUserRepository>();
-            services.AddScoped<IRepository<Transaction>, MySqlTransactionRepository>();
-            services.AddScoped<IRepository<Country>, MySqlCountryRepository>();
-            services.AddScoped<IRepository<Province>, MySqlProvinceRepository>();
-
-            services.AddScoped<ISearchingService<Transaction>, MySqlTransactionRepository>();
-            services.AddScoped<ICountingService<Transaction>, MySqlTransactionRepository>();
-            
-            services.AddScoped<UseCases, UseCases>();
-
-            services.AddScoped<TransactionPresenter, TransactionPresenter>();
-            services.AddScoped<UserPresenter, UserPresenter>();
-            
-            services.AddScoped<TransactionsQuery, TransactionsQuery>();
-
-            
-            
-            
             services.AddScoped<AdminUseCases, AdminUseCases>();
             services.AddScoped<ITransactionRepository, EFTransactionsRepository>();
             services.AddScoped<IUserRepository, EFUsersRepository>();
