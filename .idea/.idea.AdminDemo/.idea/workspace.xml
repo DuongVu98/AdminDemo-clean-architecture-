@@ -3,10 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="9b1e9abe-a836-495d-b80a-7a79d9119bd3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.AdminDemo/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AdminDemo/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminDemo/obj/AdminDemo.csproj.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/AdminDemo/obj/AdminDemo.csproj.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminDemo/obj/AdminDemo.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/AdminDemo/obj/AdminDemo.csproj.nuget.g.props" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminDemo/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/AdminDemo/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminDemo/wwwroot/app/services/transaction.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminDemo/wwwroot/app/services/transaction.service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminDemo/Adapters/Models/TransactionWeb.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AdminDemo/Adapters/Models/TransactionWeb.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AdminDemo/wwwroot/app/transactions/transaction.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminDemo/wwwroot/app/transactions/transaction.controller.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -58,17 +55,17 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/AdminDemo/Adapters/Models/TransactionWeb.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="26" column="40" lean-forward="true" selection-start-line="26" selection-start-column="40" selection-end-line="26" selection-end-column="40" />
+            <state relative-caret-position="162">
+              <caret line="9" column="38" selection-start-line="9" selection-start-column="38" selection-end-line="9" selection-end-column="38" />
               <folding>
-                <marker date="1562700827731" expanded="true" signature="6:65" ph="..." />
-                <marker date="1562700827731" expanded="true" signature="102:879" ph="{...}" />
-                <marker date="1562700827731" expanded="true" signature="136:877" ph="{...}" />
-                <marker date="1562700827731" expanded="true" signature="300:320" ph="{...}" />
-                <marker date="1562700827731" expanded="true" signature="395:493" ph="{...}" />
-                <marker date="1562700827731" expanded="true" signature="541:635" ph="{...}" />
-                <marker date="1562700827731" expanded="true" signature="661:741" ph="{...}" />
-                <marker date="1562700827731" expanded="true" signature="775:871" ph="{...}" />
+                <marker date="1562731620819" expanded="true" signature="6:65" ph="..." />
+                <marker date="1562731620819" expanded="true" signature="102:869" ph="{...}" />
+                <marker date="1562731620819" expanded="true" signature="136:867" ph="{...}" />
+                <marker date="1562731620819" expanded="true" signature="290:310" ph="{...}" />
+                <marker date="1562731620819" expanded="true" signature="385:483" ph="{...}" />
+                <marker date="1562731620819" expanded="true" signature="531:625" ph="{...}" />
+                <marker date="1562731620819" expanded="true" signature="651:731" ph="{...}" />
+                <marker date="1562731620819" expanded="true" signature="765:861" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -304,6 +301,20 @@
       <pane id="FileSystemExplorer" />
       <pane id="AssemblyExplorer" />
       <pane id="SolutionExplorer">
+        <subPane>
+          <expand>
+            <path>
+              <item name="" type="784c90a0:SolutionExplorerRootNode" />
+              <item name="AdminDemo" type="24d0babc:SolutionExplorerModelNode" />
+            </path>
+            <path>
+              <item name="" type="784c90a0:SolutionExplorerRootNode" />
+              <item name="AdminDemo" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="AdminDemo" type="24d0babc:SolutionExplorerModelNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
         <option name="show-all-files" value="false" />
       </pane>
     </panes>
@@ -416,12 +427,12 @@
       <workItem from="1562570384442" duration="11126000" />
       <workItem from="1562639790815" duration="5729000" />
       <workItem from="1562683277096" duration="17005000" />
-      <workItem from="1562726737497" duration="1242000" />
+      <workItem from="1562726737497" duration="2123000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="155471000" />
+    <option name="totallyTimeSpent" value="156352000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -436,7 +447,7 @@
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18181819" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18181819" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Capture Tool" order="3" />
@@ -444,7 +455,7 @@
       <window_info id="Azure Explorer" order="5" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49933156" visible="true" weight="0.121468924" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49933156" visible="true" weight="0.121468924" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -1228,17 +1239,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/AdminDemo/Adapters/Models/TransactionWeb.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="26" column="40" lean-forward="true" selection-start-line="26" selection-start-column="40" selection-end-line="26" selection-end-column="40" />
+        <state relative-caret-position="162">
+          <caret line="9" column="38" selection-start-line="9" selection-start-column="38" selection-end-line="9" selection-end-column="38" />
           <folding>
-            <marker date="1562700827731" expanded="true" signature="6:65" ph="..." />
-            <marker date="1562700827731" expanded="true" signature="102:879" ph="{...}" />
-            <marker date="1562700827731" expanded="true" signature="136:877" ph="{...}" />
-            <marker date="1562700827731" expanded="true" signature="300:320" ph="{...}" />
-            <marker date="1562700827731" expanded="true" signature="395:493" ph="{...}" />
-            <marker date="1562700827731" expanded="true" signature="541:635" ph="{...}" />
-            <marker date="1562700827731" expanded="true" signature="661:741" ph="{...}" />
-            <marker date="1562700827731" expanded="true" signature="775:871" ph="{...}" />
+            <marker date="1562731620819" expanded="true" signature="6:65" ph="..." />
+            <marker date="1562731620819" expanded="true" signature="102:869" ph="{...}" />
+            <marker date="1562731620819" expanded="true" signature="136:867" ph="{...}" />
+            <marker date="1562731620819" expanded="true" signature="290:310" ph="{...}" />
+            <marker date="1562731620819" expanded="true" signature="385:483" ph="{...}" />
+            <marker date="1562731620819" expanded="true" signature="531:625" ph="{...}" />
+            <marker date="1562731620819" expanded="true" signature="651:731" ph="{...}" />
+            <marker date="1562731620819" expanded="true" signature="765:861" ph="{...}" />
           </folding>
         </state>
       </provider>

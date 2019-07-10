@@ -9,8 +9,6 @@ namespace AdminDemo.Adapters.Models
         private int count;
         private int amountPerPage = 5;
 
-        
-
         public TransactionWeb()
         {
         }
