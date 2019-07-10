@@ -11,6 +11,7 @@
             <e p="UserWeb.cs" t="Include" />
           </e>
           <e p="ModelsBuilder" t="Include">
+            <e p="ProvinceBuilder.cs" t="Include" />
             <e p="TransactionBuilder.cs" t="Include" />
             <e p="UserBuilder.cs" t="Include" />
           </e>
@@ -111,6 +112,7 @@
               <e p="transactions.css" t="Include" />
             </e>
             <e p="Users" t="Include">
+              <e p="pagenumber.html" t="Include" />
               <e p="user.controller.js" t="Include" />
               <e p="user.html" t="Include" />
             </e>

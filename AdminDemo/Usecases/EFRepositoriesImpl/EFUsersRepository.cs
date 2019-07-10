@@ -63,17 +63,20 @@ namespace AdminDemo.Usecases.EFRepositoriesImpl
 
         public List<Users> SearchByUserName(string userName)
         {
-            return context.Users.Where(u => EF.Functions.Like(u.UserName, "%" + userName + "%")).ToList();
+            string str = "%" + userName + "%";
+            return context.Users.Where(u => EF.Functions.Like(u.UserName, str)).ToList();
         }
 
         public List<Users> SearchByUserName(string userName, int limit)
         {
-            return context.Users.Where(u => EF.Functions.Like(u.UserName, "%" + userName + "%")).Skip(limit).Take(amount).ToList();
+            string str = "%" + userName + "%";
+            return context.Users.Where(u => EF.Functions.Like(u.UserName, str)).Skip(limit).Take(amount).ToList();
         }
 
         public int CountSearchByUserName(string userName)
         {
-            return context.Users.Where(u => EF.Functions.Like(u.UserName, "%" + userName + "%")).Count();
+            string str = "%" + userName + "%";
+            return context.Users.Where(u => EF.Functions.Like(u.UserName, str)).Count();
         }
 
         public List<Users> SearchByProvinceName(string userName)
