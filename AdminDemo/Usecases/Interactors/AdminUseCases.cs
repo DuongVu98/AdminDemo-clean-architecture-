@@ -40,7 +40,7 @@ namespace AdminDemo.Usecases.Interactors
             return _transactionRepository.SearchByUserName(userName, limit);
         }
 
-        public int transactionsSearchByUserNameCount(string userName)
+        public int TransactionsSearchByUserNameCount(string userName)
         {
             return _transactionRepository.CountSearchByUserName(userName);
         }
@@ -60,6 +60,16 @@ namespace AdminDemo.Usecases.Interactors
         public int UsersCount()
         {
             return _userRepository.Count();
+        }
+
+        public List<Users> UserSearchByUserName(string userName, int limit)
+        {
+            return _userRepository.SearchByUserName(userName, limit);
+        }
+
+        public int UserSearchByUserNameCount(string userName)
+        {
+            return _userRepository.CountSearchByUserName(userName);
         }
 
         

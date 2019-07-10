@@ -41,7 +41,7 @@ namespace AdminDemo.Drivers.RestControllers
         {
             TransactionWeb transactionWeb = new TransactionWeb();
             transactionWeb.Transactions = _transactionBuilder.ListBuild(_adminUseCases.TransactionsSearchByUserName(username, limit));
-            transactionWeb.Count = _adminUseCases.transactionsSearchByUserNameCount(username);
+            transactionWeb.Count = _adminUseCases.TransactionsSearchByUserNameCount(username);
 
             return transactionWeb;
         }
@@ -55,6 +55,16 @@ namespace AdminDemo.Drivers.RestControllers
             UserWeb userWeb = new UserWeb();
             userWeb.Users = _userBuilder.ListBuild(_adminUseCases.FindAllUsers(limit));
             userWeb.Count = _adminUseCases.UsersCount();
+
+            return userWeb;
+        }
+
+        [HttpGet("users/search/by-username/{username}/{limit}")]
+        public async Task<ActionResult<UserWeb>> UserSearchByUserName(string username, int limit)
+        {
+            UserWeb userWeb = new UserWeb();
+            userWeb.Users = _userBuilder.ListBuild(_adminUseCases.UserSearchByUserName(username, limit));
+            userWeb.Count = _adminUseCases.UserSearchByUserNameCount(username);
 
             return userWeb;
         }
