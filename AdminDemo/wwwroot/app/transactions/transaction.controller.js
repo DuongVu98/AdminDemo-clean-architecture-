@@ -3,12 +3,17 @@
 
     angular
         .module("admin")
-        .controller("transactionController", ["transactionResource", getTransactions])
+        .controller("transactionController", ["transactionResource", transactionsProcessing])
 
-    function getTransactions(transactionResource) {
+    function transactionsProcessing(transactionResource) {
         var vm = this
 
         initPage(transactionResource, vm)
+
+        vm.getInitPage = ($event) => {
+            initPage(transactionResource, vm)
+            vm.searchString = null;
+        }
 
         vm.getPage = ($event) => {
             let limit = $event.target.value
@@ -22,7 +27,6 @@
                     vm.transactions = data.transactions
                 })
             }
-            
         }
 
         vm.search = () => {

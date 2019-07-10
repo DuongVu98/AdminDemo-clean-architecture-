@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9b1e9abe-a836-495d-b80a-7a79d9119bd3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.AdminDemo/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AdminDemo/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminDemo/Adapters/Models/TransactionWeb.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AdminDemo/Adapters/Models/TransactionWeb.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminDemo/Pages/Shared/_Homepage.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/AdminDemo/Pages/Shared/_Homepage.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AdminDemo/wwwroot/app/transactions/transaction.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminDemo/wwwroot/app/transactions/transaction.controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminDemo/wwwroot/app/transactions/transaction.html" beforeDir="false" afterPath="$PROJECT_DIR$/AdminDemo/wwwroot/app/transactions/transaction.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminDemo/wwwroot/app/transactions/transactions.css" beforeDir="false" afterPath="$PROJECT_DIR$/AdminDemo/wwwroot/app/transactions/transactions.css" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -52,7 +53,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/AdminDemo/Adapters/Models/TransactionWeb.cs">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="162">
@@ -103,7 +104,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/AdminDemo/Drivers/RestControllers/TestController.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="273">
+            <state relative-caret-position="-18">
               <caret line="38" column="64" selection-start-line="38" selection-start-column="18" selection-end-line="38" selection-end-column="64" />
               <folding>
                 <marker date="1562700145812" expanded="true" signature="6:276" ph="..." />
@@ -114,6 +115,15 @@
                 <marker date="1562700145812" expanded="true" signature="1477:1829" ph="{...}" />
                 <marker date="1562700145812" expanded="true" signature="1968:2207" ph="{...}" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/AdminDemo/Pages/Shared/_Homepage.cshtml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="342">
+              <caret line="22" column="71" lean-forward="true" selection-start-line="22" selection-start-column="71" selection-end-line="22" selection-end-column="71" />
             </state>
           </provider>
         </entry>
@@ -260,7 +270,6 @@
         <option value="$PROJECT_DIR$/AdminDemo/wwwroot/app/routes/app.route.js" />
         <option value="$PROJECT_DIR$/AdminDemo/wwwroot/app/users/user.controller.js" />
         <option value="$PROJECT_DIR$/AdminDemo/Usecases/RepositoriesImpl/MySqlTransactionRepository.cs" />
-        <option value="$PROJECT_DIR$/AdminDemo/Pages/Shared/_Homepage.cshtml" />
         <option value="$PROJECT_DIR$/AdminDemo/Usecases/EFRepositoriesImpl/EFTransactionRepository.cs" />
         <option value="$PROJECT_DIR$/AdminDemo/Usecases/DatabaseConfiguration/DatabaseConnectionConfiguration.cs" />
         <option value="$PROJECT_DIR$/AdminDemo/AdminDemo.csproj" />
@@ -284,6 +293,7 @@
         <option value="$PROJECT_DIR$/AdminDemo/Usecases/EFRepositoriesImpl/EFTransactionsRepository.cs" />
         <option value="$PROJECT_DIR$/AdminDemo/Drivers/RestControllers/TestController.cs" />
         <option value="$PROJECT_DIR$/AdminDemo/Adapters/Models/TransactionWeb.cs" />
+        <option value="$PROJECT_DIR$/AdminDemo/Pages/Shared/_Homepage.cshtml" />
       </list>
     </option>
   </component>
@@ -311,6 +321,19 @@
               <item name="" type="784c90a0:SolutionExplorerRootNode" />
               <item name="AdminDemo" type="24d0babc:SolutionExplorerModelNode" />
               <item name="AdminDemo" type="24d0babc:SolutionExplorerModelNode" />
+            </path>
+            <path>
+              <item name="" type="784c90a0:SolutionExplorerRootNode" />
+              <item name="AdminDemo" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="AdminDemo" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Pages" type="24d0babc:SolutionExplorerModelNode" />
+            </path>
+            <path>
+              <item name="" type="784c90a0:SolutionExplorerRootNode" />
+              <item name="AdminDemo" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="AdminDemo" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Pages" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Shared" type="24d0babc:SolutionExplorerModelNode" />
             </path>
           </expand>
           <select />
@@ -427,12 +450,12 @@
       <workItem from="1562570384442" duration="11126000" />
       <workItem from="1562639790815" duration="5729000" />
       <workItem from="1562683277096" duration="17005000" />
-      <workItem from="1562726737497" duration="2123000" />
+      <workItem from="1562726737497" duration="3423000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="156352000" />
+    <option name="totallyTimeSpent" value="157652000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -497,23 +520,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/AdminDemo/Adapters/Presenters/TransactionPresenter.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="201">
-          <caret line="22" column="13" lean-forward="true" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
-          <folding>
-            <marker date="1562127336600" expanded="true" signature="6:138" ph="..." />
-            <marker date="1562127336600" expanded="true" signature="179:2399" ph="{...}" />
-            <marker date="1562127336600" expanded="true" signature="219:2397" ph="{...}" />
-            <marker date="1562127336600" expanded="true" signature="317:371" ph="{...}" />
-            <marker date="1562127336600" expanded="true" signature="470:1361" ph="{...}" />
-            <marker date="1562127336600" expanded="true" signature="706:1309" ph="{...}" />
-            <marker date="1562127336600" expanded="true" signature="1461:2382" ph="{...}" />
-            <marker date="1562127336600" expanded="true" signature="1727:2330" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/AdminDemo/Adapters/Models/PopulatedTransaction.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="333">
@@ -731,13 +737,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="324">
           <caret line="18" column="64" lean-forward="true" selection-start-line="18" selection-start-column="64" selection-end-line="18" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AdminDemo/Pages/Shared/_Homepage.cshtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="65">
-          <caret line="22" column="58" selection-start-line="22" selection-start-column="58" selection-end-line="22" selection-end-column="58" />
         </state>
       </provider>
     </entry>
@@ -1194,18 +1193,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/AdminDemo/Drivers/RestControllers/TestController.cs">
+    <entry file="file://$PROJECT_DIR$/AdminDemo/Adapters/Models/TransactionWeb.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="38" column="64" selection-start-line="38" selection-start-column="18" selection-end-line="38" selection-end-column="64" />
+        <state relative-caret-position="162">
+          <caret line="9" column="38" selection-start-line="9" selection-start-column="38" selection-end-line="9" selection-end-column="38" />
           <folding>
-            <marker date="1562700145812" expanded="true" signature="6:276" ph="..." />
-            <marker date="1562700145812" expanded="true" signature="321:2215" ph="{...}" />
-            <marker date="1562700145812" expanded="true" signature="405:2213" ph="{...}" />
-            <marker date="1562700145812" expanded="true" signature="688:846" ph="{...}" />
-            <marker date="1562700145812" expanded="true" signature="979:1288" ph="{...}" />
-            <marker date="1562700145812" expanded="true" signature="1477:1829" ph="{...}" />
-            <marker date="1562700145812" expanded="true" signature="1968:2207" ph="{...}" />
+            <marker date="1562731620819" expanded="true" signature="6:65" ph="..." />
+            <marker date="1562731620819" expanded="true" signature="102:869" ph="{...}" />
+            <marker date="1562731620819" expanded="true" signature="136:867" ph="{...}" />
+            <marker date="1562731620819" expanded="true" signature="290:310" ph="{...}" />
+            <marker date="1562731620819" expanded="true" signature="385:483" ph="{...}" />
+            <marker date="1562731620819" expanded="true" signature="531:625" ph="{...}" />
+            <marker date="1562731620819" expanded="true" signature="651:731" ph="{...}" />
+            <marker date="1562731620819" expanded="true" signature="765:861" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -1237,20 +1237,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/AdminDemo/Adapters/Models/TransactionWeb.cs">
+    <entry file="file://$PROJECT_DIR$/AdminDemo/Drivers/RestControllers/TestController.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="9" column="38" selection-start-line="9" selection-start-column="38" selection-end-line="9" selection-end-column="38" />
+        <state relative-caret-position="-18">
+          <caret line="38" column="64" selection-start-line="38" selection-start-column="18" selection-end-line="38" selection-end-column="64" />
           <folding>
-            <marker date="1562731620819" expanded="true" signature="6:65" ph="..." />
-            <marker date="1562731620819" expanded="true" signature="102:869" ph="{...}" />
-            <marker date="1562731620819" expanded="true" signature="136:867" ph="{...}" />
-            <marker date="1562731620819" expanded="true" signature="290:310" ph="{...}" />
-            <marker date="1562731620819" expanded="true" signature="385:483" ph="{...}" />
-            <marker date="1562731620819" expanded="true" signature="531:625" ph="{...}" />
-            <marker date="1562731620819" expanded="true" signature="651:731" ph="{...}" />
-            <marker date="1562731620819" expanded="true" signature="765:861" ph="{...}" />
+            <marker date="1562700145812" expanded="true" signature="6:276" ph="..." />
+            <marker date="1562700145812" expanded="true" signature="321:2215" ph="{...}" />
+            <marker date="1562700145812" expanded="true" signature="405:2213" ph="{...}" />
+            <marker date="1562700145812" expanded="true" signature="688:846" ph="{...}" />
+            <marker date="1562700145812" expanded="true" signature="979:1288" ph="{...}" />
+            <marker date="1562700145812" expanded="true" signature="1477:1829" ph="{...}" />
+            <marker date="1562700145812" expanded="true" signature="1968:2207" ph="{...}" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AdminDemo/Pages/Shared/_Layout.cshtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-297" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AdminDemo/Pages/Shared/_Homepage.cshtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="22" column="71" lean-forward="true" selection-start-line="22" selection-start-column="71" selection-end-line="22" selection-end-column="71" />
         </state>
       </provider>
     </entry>
