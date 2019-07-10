@@ -12,20 +12,15 @@
         var numberPerPages
         var numberOfPages
 
-        transactionResource.transactions.query({ limit: 0 }, data => {
-            vm.transactions = data
-        })
+        transactionResource.transactions.get({ limit: 0 }, data => {
+            console.log(data)
+            vm.transactions = data.transactions
+            vm.transactionsCount = data.count
+            vm.numberPerPages = data.amountPerPage
 
-        transactionResource.count.query(data => {
-            // all of transactions (==4)
-            transactionsCount = data[0].numberOfAllTransactions
-            // number of transactions per page
-            numberPerPages = data[0].transactionsPerQuery
-            vm.numberPerPages = numberPerPages
+            numberPerPages = data.amountPerPage
+            transactionsCount = data.count
 
-            console.log("inside: "+transactionsCount + " - " + vm.numberPerPages)
-
-            //generate number of pages
             if (numberPerPages != 0) {
                 if (transactionsCount % numberPerPages != 0) {
                     numberOfPages = Math.floor(transactionsCount / numberPerPages) + 1
@@ -45,8 +40,8 @@
             let limtit = $event.target.value
             console.log($event.target.value)
 
-            transactionResource.transactions.query({ limit: limtit }, data => {
-                vm.transactions = data
+            transactionResource.transactions.get({ limit: limtit }, data => {
+                vm.transactions = data.transactions
             })
         }
 
@@ -54,12 +49,12 @@
             console.log("Search !!")
             console.log(vm.searchString)
             if(vm.searchString != null){
-                transactionResource.search.query({ string: vm.searchString }, data => {
-                    vm.transactions = data
+                transactionResource.search.get({ string: vm.searchString, limit: 0 }, data => {
+                    vm.transactions = data.transactions
                 })
             }else{
-                transactionResource.transactions.query({ limit: 0 }, data => {
-                    vm.transactions = data
+                transactionResource.transactions.get({ limit: 0 }, data => {
+                    vm.transactions = data.transactions
                 })
             }
         }
