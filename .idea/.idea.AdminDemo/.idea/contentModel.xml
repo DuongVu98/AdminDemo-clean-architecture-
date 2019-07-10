@@ -9,6 +9,12 @@
           <e p="Models" t="Include">
             <e p="PopulatedTransaction.cs" t="Include" />
             <e p="PopulatedUser.cs" t="Include" />
+            <e p="TransactionWeb.cs" t="Include" />
+            <e p="UserWeb.cs" t="Include" />
+          </e>
+          <e p="ModelsBuilder" t="Include">
+            <e p="TransactionBuilder.cs" t="Include" />
+            <e p="UserBuilder.cs" t="Include" />
           </e>
           <e p="Presenters" t="Include">
             <e p="TransactionPresenter.cs" t="Include" />
@@ -22,11 +28,12 @@
         <e p="appsettings.json" t="Include" />
         <e p="bin" t="ExcludeRecursive" />
         <e p="Domains" t="Include">
-          <e p="Entities" t="Include">
-            <e p="Country.cs" t="Include" />
-            <e p="Province.cs" t="Include" />
-            <e p="Transaction.cs" t="Include" />
-            <e p="User.cs" t="Include" />
+          <e p="Models" t="Include">
+            <e p="Countries.cs" t="Include" />
+            <e p="mydbContext.cs" t="Include" />
+            <e p="Provinces.cs" t="Include" />
+            <e p="Transactions.cs" t="Include" />
+            <e p="Users.cs" t="Include" />
           </e>
         </e>
         <e p="Drivers" t="Include">
@@ -35,6 +42,7 @@
           </e>
           <e p="RestControllers" t="Include">
             <e p="AdminController.cs" t="Include" />
+            <e p="TestController.cs" t="Include" />
           </e>
         </e>
         <e p="obj" t="ExcludeRecursive">
@@ -69,8 +77,14 @@
           <e p="DatabaseConfiguration" t="Include">
             <e p="DatabaseConnectionConfiguration.cs" t="Include" />
           </e>
-          <e p="EFRepositoriesImpl" t="Include" />
+          <e p="EFRepositoriesImpl" t="Include">
+            <e p="EFCountryRepository.cs" t="Include" />
+            <e p="EFProvinceRepositoy.cs" t="Include" />
+            <e p="EFTransactionsRepository.cs" t="Include" />
+            <e p="EFUsersRepository.cs" t="Include" />
+          </e>
           <e p="Interactors" t="Include">
+            <e p="AdminUseCases.cs" t="Include" />
             <e p="TransactionsQuery.cs" t="Include" />
             <e p="UseCases.cs" t="Include" />
           </e>

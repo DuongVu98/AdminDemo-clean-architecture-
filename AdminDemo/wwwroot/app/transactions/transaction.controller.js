@@ -3,66 +3,81 @@
 
     angular
         .module("admin")
-        .controller("transactionController", ["transactionResource", getTransactions])
+        .controller("transactionController", ["transactionResource", transactionsProcessing])
 
-    function getTransactions(transactionResource) {
+    function transactionsProcessing(transactionResource) {
         var vm = this
 
-        var transactionsCount
-        var numberPerPages
-        var numberOfPages
+        initPage(transactionResource, vm)
 
-        transactionResource.transactions.query({ limit: 0 }, data => {
-            vm.transactions = data
-        })
-
-        transactionResource.count.query(data => {
-            // all of transactions (==4)
-            transactionsCount = data[0].numberOfAllTransactions
-            // number of transactions per page
-            numberPerPages = data[0].transactionsPerQuery
-            vm.numberPerPages = numberPerPages
-
-            console.log("inside: "+transactionsCount + " - " + vm.numberPerPages)
-
-            //generate number of pages
-            if (numberPerPages != 0) {
-                if (transactionsCount % numberPerPages != 0) {
-                    numberOfPages = Math.floor(transactionsCount / numberPerPages) + 1
-                    console.log(numberOfPages)
-                } else {
-                    numberOfPages = Math.floor(transactionsCount / numberPerPages)
-                    console.log(numberOfPages)
-                }
-                vm.numberOfPages = []
-                for (var i = 1; i <= numberOfPages; i++) {
-                    vm.numberOfPages.push(i)
-                }
-            }
-        })
+        vm.getInitPage = () => {
+            initPage(transactionResource, vm)
+            vm.searchString = null;
+        }
 
         vm.getPage = ($event) => {
-            let limtit = $event.target.value
+            let limit = $event.target.value
             console.log($event.target.value)
 
-            transactionResource.transactions.query({ limit: limtit }, data => {
-                vm.transactions = data
-            })
+            if(vm.searchString != null){
+                getTransactionsSearch(transactionResource, vm, limit)
+            }
+            else{
+                transactionResource.transactions.get({ limit: limit }, data => {
+                    vm.transactions = data.transactions
+                })
+            }
         }
 
         vm.search = () => {
             console.log("Search !!")
             console.log(vm.searchString)
             if(vm.searchString != null){
-                transactionResource.search.query({ string: vm.searchString }, data => {
-                    vm.transactions = data
-                })
+                getTransactionsSearch(transactionResource, vm, 0)
             }else{
-                transactionResource.transactions.query({ limit: 0 }, data => {
-                    vm.transactions = data
-                })
+                getTransactionsQuery(transactionResource, vm, 0)
             }
         }
     }
 
+    let initPage = (resource, scope) => {
+        getTransactionsQuery(resource, scope, 0)
+    }
+
+    let getTransactionsQuery = (resource, scope, limit) => {
+        resource.transactions.get({ limit: limit }, data => {
+            scope.transactions = data.transactions
+            scope.transactionsCount = data.count
+            scope.numberPerPages = data.amountPerPage
+
+            generatePagesList(scope, scope.numberPerPages, scope.transactionsCount)
+        })
+    }
+
+    let getTransactionsSearch = (resource, scope, limit) => {
+        resource.search.get({ string: scope.searchString, limit: limit }, data => {
+            scope.transactions = data.transactions
+            scope.transactionsCount = data.count
+            scope.numberPerPages = data.amountPerPage
+
+            generatePagesList(scope, scope.numberPerPages, scope.transactionsCount)
+        })
+    }
+
+    let generatePagesList = (scope, numberPerPage, transactionsCount) => {
+        var numberOfPages
+        if (numberPerPage != 0) {
+            if (transactionsCount % numberPerPage != 0) {
+                numberOfPages = Math.floor(transactionsCount / numberPerPage) + 1
+                console.log(numberOfPages)
+            } else {
+                numberOfPages = Math.floor(transactionsCount / numberPerPage)
+                console.log(numberOfPages)
+            }
+            scope.numberOfPages = []
+            for (var i = 1; i <= numberOfPages; i++) {
+                scope.numberOfPages.push(i)
+            }
+        }
+    }
 }())

@@ -7,17 +7,21 @@
 
     function getTransactionByUrl($resource){
         return {
-            transactions: $resource("https://localhost:44302/api/admin/transactions/populated-transactions/:limit",{
+            transactions: $resource("https://localhost:44302/api/test/transactions/:limit",{
                 query: {
                     method: "GET",
                     params: {limit: "@limit"}
                 }
             }),
-            count: $resource("https://localhost:44302/api/admin/transactions/count"),
-            search: $resource("https://localhost:44302/api/admin/transactions/search/:string",{
-                qeury: {
+            
+            search: $resource("https://localhost:44302/api/test/transactions/search/by-user/:string/:limit",{
+                query: {
                     method: "GET",
-                    params: {string: "@string"}
+                    params: 
+                    {
+                        string: "@string",
+                        limit: '@limit'
+                    }
                 }
             })
         }

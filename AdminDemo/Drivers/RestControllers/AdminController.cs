@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using AdminDemo.Adapters.Models;
 using AdminDemo.Adapters.Presenters;
 using AdminDemo.Domains.Entities;
+using AdminDemo.Domains.Models;
 using AdminDemo.Usecases.Interactors;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Routing;
@@ -18,11 +19,13 @@ namespace AdminDemo.Drivers.RestControllers
         private TransactionPresenter _transactionPresenter;
         private UserPresenter _userPresenter;
 
-        public AdminController(UseCases usecases, TransactionPresenter transactionPresenter, UserPresenter userPresenter)
+        private AdminUseCases _adminUseCases;
+        public AdminController(UseCases usecases, TransactionPresenter transactionPresenter, UserPresenter userPresenter, AdminUseCases adminUseCases)
         {
             _usecases = usecases;
             _transactionPresenter = transactionPresenter;
             _userPresenter = userPresenter;
+            _adminUseCases = adminUseCases;
         }
 
         // GET /api/admin/users
@@ -78,5 +81,16 @@ namespace AdminDemo.Drivers.RestControllers
             };
         }
 
+        [HttpGet("transactions/ef")]
+        public List<Transactions> GetAllEfTransactions()
+        {
+            return _usecases.GetAllEfTransactions();
+        }
+
+        [HttpGet("test")]
+        public async Task<ActionResult<IEnumerable<Transactions>>> FindAllTransactions()
+        {
+            return _adminUseCases.FindAllTransactions(1);
+        }
     }
 }
