@@ -28,12 +28,6 @@
         <e p="appsettings.json" t="Include" />
         <e p="bin" t="ExcludeRecursive" />
         <e p="Domains" t="Include">
-          <e p="Entities" t="Include">
-            <e p="Country.cs" t="Include" />
-            <e p="Province.cs" t="Include" />
-            <e p="Transaction.cs" t="Include" />
-            <e p="User.cs" t="Include" />
-          </e>
           <e p="Models" t="Include">
             <e p="Countries.cs" t="Include" />
             <e p="mydbContext.cs" t="Include" />

@@ -10,7 +10,7 @@
 
         initPage(transactionResource, vm)
 
-        vm.getInitPage = ($event) => {
+        vm.getInitPage = () => {
             initPage(transactionResource, vm)
             vm.searchString = null;
         }
@@ -40,11 +40,11 @@
         }
     }
 
-    function initPage(resource, scope){
+    let initPage = (resource, scope) => {
         getTransactionsQuery(resource, scope, 0)
     }
 
-    function getTransactionsQuery(resource, scope, limit){
+    let getTransactionsQuery = (resource, scope, limit) => {
         resource.transactions.get({ limit: limit }, data => {
             scope.transactions = data.transactions
             scope.transactionsCount = data.count
@@ -54,7 +54,7 @@
         })
     }
 
-    function getTransactionsSearch(resource, scope, limit){
+    let getTransactionsSearch = (resource, scope, limit) => {
         resource.search.get({ string: scope.searchString, limit: limit }, data => {
             scope.transactions = data.transactions
             scope.transactionsCount = data.count
@@ -64,7 +64,7 @@
         })
     }
 
-    function generatePagesList(scope, numberPerPage, transactionsCount){
+    let generatePagesList = (scope, numberPerPage, transactionsCount) => {
         var numberOfPages
         if (numberPerPage != 0) {
             if (transactionsCount % numberPerPage != 0) {
