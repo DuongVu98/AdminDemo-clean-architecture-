@@ -9,14 +9,14 @@ namespace AdminDemo.Usecases.EFRepositoriesImpl
     public class EFTransactionsRepository : ITransactionRepository
     {
         private mydbContext context;
-        private int amount = 5;
+        private int amount = AppSetting.TransactionsPerQuery;
 
         public EFTransactionsRepository(mydbContext context)
         {
             this.context = context;
         }
 
-        
+        //kmj
         public List<Transactions> FindAll()
         {
             return context.Transactions.ToList();

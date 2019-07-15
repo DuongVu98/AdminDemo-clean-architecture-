@@ -7,7 +7,7 @@ namespace AdminDemo.Adapters.Models
     {
         private List<Transactions> transactions;
         private int count;
-        private int amountPerPage = 5;
+        private int amountPerPage = AppSetting.TransactionsPerQuery;
 
         public TransactionWeb()
         {

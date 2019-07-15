@@ -1,19 +1,25 @@
 <div ng-controller="userController as vm">
     <div class="ui container">
         <div class="ui pointing menu">
-            <h3 class="ui header item active">Users</h3>
+            <button id="init-page" ng-click="vm.getInitPage()"><h3 class="ui header item active">Users</h3></button>
             <div class="right menu">
                 <div class="item">
                     <div class="ui transparent icon input">
-                        <input type="text" placeholder="Search users...">
-                        <i class="search link icon"></i>
+                        <form>
+                            <div class="ui transparent input">
+                                <input id="searchInput" type="text" placeholder="Search users..." ng-model="vm.searchString">
+                            </div>
+                            <button class="circular ui icon button" ng-click="vm.search()">
+                                <i class="search link icon"></i>
+                            </button>
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
         <table class="ui inverted blue red table" style="table-layout: fixed">
             <tr>
-                <th>ID</th>
+                <th>User ID</th>
                 <th>Username</th>
                 <th>Full name</th>
                 <th>Date of birth</th>
@@ -22,11 +28,18 @@
             </tr>
             <tr ng-repeat="user in vm.users">
                 <td>{{user.id}}</td>
-                <td>{{user.username}}</td>
+                <td>{{user.userName}}</td>
                 <td>{{user.lastName}} {{user.firstName}}</td>
                 <td>{{user.birthDate}}</td>
                 <td>{{user.address}}</td>
-                <td>{{user.province.provinceName}}</td>
+                <td>{{user.provinces.provinceName}}, {{user.provinces.countries.countryName}}</td>
+            </tr>
+        </table>
+        <table id="thistable" align="center">
+            <tr id="pages-list">
+                <td ng-repeat="pageNumber in vm.numberOfPages">
+                    <div ng-include="'app/users/pagenumber.html'"></div>
+                </td>
             </tr>
         </table>
     </div>

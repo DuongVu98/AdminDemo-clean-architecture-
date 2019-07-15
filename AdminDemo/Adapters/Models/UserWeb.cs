@@ -7,7 +7,9 @@ namespace AdminDemo.Adapters.Models
     {
         private List<Users> users;
         private int count;
-
+        private int amountPerPage = AppSetting.UsersPerQuery;
+        
+        
         public List<Users> Users
         {
             get => users;
@@ -18,6 +20,11 @@ namespace AdminDemo.Adapters.Models
         {
             get => count;
             set => count = value;
+        }
+        public int AmountPerPage
+        {
+            get => amountPerPage;
+            set => amountPerPage = value;
         }
     }
 }
