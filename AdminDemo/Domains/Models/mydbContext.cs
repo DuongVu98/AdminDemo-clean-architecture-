@@ -23,7 +23,7 @@ namespace AdminDemo.Domains.Models
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                optionsBuilder.UseMySQL("server=68.183.182.103;port=3306;user=root;password=1234;database=mydb;");
+                optionsBuilder.UseMySQL("server=localhost;port=3306;user=root;password=tungduong98;database=mydb;");
             }
         }
 
